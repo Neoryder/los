@@ -17,6 +17,12 @@ class Teacher {
     String middleName
     String lastName
 
+    static transients = [ 'wholeName' ]
+
+    public String getWholeName() {
+        return "$firstName $middleName $lastName"
+    }
+    // Test commit
     String type
     String status = 'active'
 
