@@ -1,6 +1,7 @@
 import los.Distrito
 import los.Lokal
 import los.Teacher
+import los.Uri
 
 class BootStrap {
 
@@ -193,6 +194,64 @@ class BootStrap {
                     type:'pastor'
             ).save()
         }
+
+        //BootStrap Uri
+        Uri uriBG = Uri.findByCode('BG')
+        if(!uriBG){
+             uriBG = new Uri(code: 'BG', description: 'Bagong Itinalang Sinusubok').save()
+        }
+
+        Uri uriDT = Uri.findByCode('DT')
+        if(!uriDT){
+            uriDT = new Uri(code: 'DT', description: 'Dating Sinusubok').save()
+        }
+
+        Uri uriTf = Uri.findByCode('TF')
+        if(!uriTf){
+            uriTf = new Uri(code: 'TF', description: 'Tumigil sa Pagsubok').save()
+        }
+
+        Uri uriBL = Uri.findByCode('BL')
+        if(!uriBL){
+            uriBL = new Uri(code: 'BL', description: 'Balik Pagsubok').save()
+        }
+
+        //Bootstrap WeekNo
+        //TODO Fill this up
+        Calendar cal = Calendar.getInstance()
+        cal.set(Calendar.YEAR,2016)
+        println '1'+ cal.getTime()
+        cal.set(Calendar.DAY_OF_YEAR,1)
+        println '2'+cal.getTime()
+        cal.set(Calendar.WEEK_OF_YEAR,1)
+        println '3'+cal.getTime()
+        println '3a'+cal.get(Calendar.WEEK_OF_YEAR)
+        cal.set(Calendar.DAY_OF_WEEK,2)
+        println '4'+cal.getTime()
+        cal.add(Calendar.DAY_OF_YEAR,6)
+        println '5'+cal.getTime()
+        cal.add(Calendar.DAY_OF_YEAR,1)
+        println '6'+cal.getTime()
+        cal.add(Calendar.DAY_OF_YEAR,6)
+        println '7'+cal.getTime()
+        println '7a'+cal.get(Calendar.WEEK_OF_YEAR)
+
+
+//        cal.set(Calendar.WEEK_OF_YEAR,2)
+//        println cal.getTime()
+//        cal.set(Calendar.DAY_OF_WEEK,3)
+//        println cal.getTime()
+//        println "AAAAAAAAAAAAAAAAAAAAAA:"+ cal.getWeeksInWeekYear()
+//        println cal.getFirstDayOfWeek()
+//        println cal.getMinimalDaysInFirstWeek()
+
+        Date dateFrom
+        Date dateTo
+        Integer week
+        Integer year
+
+        println cal.getWeekYear()
+
 
 
 
