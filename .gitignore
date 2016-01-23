@@ -31,3 +31,13 @@
 
 # "temporary" build files
 /target
+
+#Intellij COnfig
+/.idea
+.idea
+*.iws
+.idea/workspace.xml
+.idea/compiler.xml
+.idea/misc.xml
+*tasks.xml
+*.iml
