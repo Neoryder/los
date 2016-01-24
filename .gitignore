@@ -41,3 +41,5 @@
 .idea/misc.xml
 *tasks.xml
 *.iml
+*los.iml
+*los-grailsPlugins.iml
