@@ -4,8 +4,8 @@ class DevotionalPrayer {
 
     static constraints = {
         dateOfAttendance nullable: false
-        type nullable: true
-        status  nullable: false, inList: ['active','inactive']
+//        type nullable: true
+//        status  nullable: false, inList: ['active','inactive']
     }
 
     Date dateOfAttendance
