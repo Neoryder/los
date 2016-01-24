@@ -17,6 +17,8 @@ class Teacher {
     String middleName
     String lastName
 
+    Lokal lokal
+
     static transients = [ 'wholeName' ]
 
     public String getWholeName() {
