@@ -10,6 +10,7 @@ class Teacher {
 
         type nullable:true
         status nullable: false, inList: ['active','inactive']
+        lokal nullable:false
     }
 
     String assignedNumber
@@ -22,7 +23,7 @@ class Teacher {
     static transients = [ 'wholeName' ]
 
     public String getWholeName() {
-        return "$firstName $middleName $lastName"
+        return "$assignedNumber - $firstName $middleName $lastName"
     }
     // Test commit
     String type
