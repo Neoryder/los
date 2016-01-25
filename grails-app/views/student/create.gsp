@@ -5,8 +5,21 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'student.label', default: 'Student')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
-	</head>
+        <g:javascript library="jquery" plugin="jquery"/>
+        <link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.base.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.classic.css')}" type="text/css">
+        <script src="${resource(dir: 'js/jqwidgets', file: 'jqx-all.js')}" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // Create a jqxDateTimeInput
+//                $("#birthDate").jqxDateTimeInput({theme: "arctic",  width: '100px', height: '25px'});
+                $("#birthDate").jqxDateTimeInput({ width: '150px', height: '25px', showCalendarButton:true,  formatString: 'MMM-dd-yyyy', allowNullDate: true  });
+            });
+        </script>
+    </head>
 	<body>
+
 		<a href="#create-student" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>

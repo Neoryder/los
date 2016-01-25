@@ -6,6 +6,16 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'student.label', default: 'Student')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
+        <link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.base.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.classic.css')}" type="text/css">
+        <script src="${resource(dir: 'js/jqwidgets', file: 'jqx-all.js')}" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // Create a jqxDateTimeInput
+//                $("#birthDate").jqxDateTimeInput({ width: '150px', height: '25px', showCalendarButton:true,  formatString: 'MMM-dd-yyyy'  });
+            });
+        </script>
 	</head>
 	<body>
 		<a href="#list-student" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
