@@ -192,7 +192,7 @@
 		<g:message code="student.teacher.label" default="Teacher" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="teacher" name="teacher.id" noSelection="${['null':'Select One...']}" from="${los.Teacher.list()}" optionKey="id" optionValue="wholeName" required="" value="${studentInstance?.teacher?.id}" class="many-to-one"/>
+	<g:select id="teacher" name="teacher.id" noSelection="${['null':'Select One...']}" from="${los.Teacher.list()}" optionKey="id" optionValue="name" required="" value="${studentInstance?.teacher?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson01DateOfAttendance', 'error')} ">
