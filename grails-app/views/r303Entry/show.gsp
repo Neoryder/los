@@ -86,6 +86,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${r303EntryInstance?.r303}">
+				<li class="fieldcontain">
+					<span id="r303-label" class="property-label"><g:message code="r303Entry.r303.label" default="R303" /></span>
+					
+						<span class="property-value" aria-labelledby="r303-label"><g:link controller="r303" action="show" id="${r303EntryInstance?.r303?.id}">${r303EntryInstance?.r303?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${r303EntryInstance?.student}">
 				<li class="fieldcontain">
 					<span id="student-label" class="property-label"><g:message code="r303Entry.student.label" default="Student" /></span>

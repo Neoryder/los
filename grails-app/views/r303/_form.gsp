@@ -23,7 +23,16 @@
 		<g:message code="r303.entry.label" default="Entry" />
 		
 	</label>
-	<g:select name="entry" from="${los.reports.R303Entry.list()}" multiple="multiple" optionKey="id" size="5" value="${r303Instance?.entry*.id}" class="many-to-many"/>
+	
+<ul class="one-to-many">
+<g:each in="${r303Instance?.entry?}" var="e">
+    <li><g:link controller="r303Entry" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="r303Entry" action="create" params="['r303.id': r303Instance?.id]">${message(code: 'default.add.label', args: [message(code: 'r303Entry.label', default: 'R303Entry')])}</g:link>
+</li>
+</ul>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: r303Instance, field: 'lokal', 'error')} required">
@@ -31,7 +40,7 @@
 		<g:message code="r303.lokal.label" default="Lokal" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="lokal" name="lokal.id" from="${los.Lokal.list()}" optionKey="id" required="" value="${r303Instance?.lokal?.id}" class="many-to-one"/>
+	<g:select id="lokal" name="lokal.id" from="${los.Lokal.list()}" optionKey="id" optionValue="lokal" noSelection="${[null:'Please Choose a lokal']}"  required="" value="${r303Instance?.lokal?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: r303Instance, field: 'teacher', 'error')} required">
@@ -39,7 +48,7 @@
 		<g:message code="r303.teacher.label" default="Teacher" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="teacher" name="teacher.id" from="${los.Teacher.list()}" optionKey="id" required="" value="${r303Instance?.teacher?.id}" class="many-to-one"/>
+	<g:select id="teacher" name="teacher.id" from="${los.Teacher.list()}" optionKey="id"  optionValue="assignedNumber" noSelection="${[null:'Please Choose a assigned number']}" required="" value="${r303Instance?.teacher?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: r303Instance, field: 'weekNo', 'error')} required">

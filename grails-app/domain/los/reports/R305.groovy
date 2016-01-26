@@ -15,7 +15,6 @@ class R305 {
 
     static hasMany = [ entry :R305Entry ]
 
-
     static constraints = {
     }
 }

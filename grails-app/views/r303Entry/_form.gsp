@@ -58,6 +58,14 @@
 	<g:field name="lessonWed" type="number" value="${r303EntryInstance.lessonWed}" required=""/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: r303EntryInstance, field: 'r303', 'error')} required">
+	<label for="r303">
+		<g:message code="r303Entry.r303.label" default="R303" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="r303" name="r303.id" from="${los.reports.R303.list()}" optionKey="id" required="" value="${r303EntryInstance?.r303?.id}" class="many-to-one"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: r303EntryInstance, field: 'student', 'error')} required">
 	<label for="student">
 		<g:message code="r303Entry.student.label" default="Student" />

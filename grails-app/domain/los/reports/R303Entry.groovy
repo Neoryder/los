@@ -13,6 +13,9 @@ class R303Entry {
     Integer lessonFri
     Integer lessonSat
     Integer lessonSun
+    R303 r303
+
+    static belongsTo = [r303:R303]
 
 
     static constraints = {

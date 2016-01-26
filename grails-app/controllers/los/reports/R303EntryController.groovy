@@ -63,8 +63,8 @@ class R303EntryController {
         if (version != null) {
             if (r303EntryInstance.version > version) {
                 r303EntryInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                        [message(code: 'r303Entry.label', default: 'R303Entry')] as Object[],
-                        "Another user has updated this R303Entry while you were editing")
+                          [message(code: 'r303Entry.label', default: 'R303Entry')] as Object[],
+                          "Another user has updated this R303Entry while you were editing")
                 render(view: "edit", model: [r303EntryInstance: r303EntryInstance])
                 return
             }

@@ -40,7 +40,7 @@
 		<g:message code="r309.lokal.label" default="Lokal" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="lokal" name="lokal.id" from="${los.Lokal.list()}" optionKey="id" required="" value="${r309Instance?.lokal?.id}" class="many-to-one"/>
+	<g:select id="lokal" name="lokal.id" from="${los.Lokal.list()}"  optionKey="id" optionValue="lokal" noSelection="${[null:'Please Choose a lokal']}" required="" value="${r309Instance?.lokal?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: r309Instance, field: 'teacher', 'error')} required">
@@ -48,7 +48,7 @@
 		<g:message code="r309.teacher.label" default="Teacher" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="teacher" name="teacher.id" from="${los.Teacher.list()}" optionKey="id" required="" value="${r309Instance?.teacher?.id}" class="many-to-one"/>
+	<g:select id="teacher" name="teacher.id" from="${los.Teacher.list()}" optionKey="id" optionValue="assignedNumber" noSelection="${[null:'Please Choose a assigned number']}" required="" value="${r309Instance?.teacher?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: r309Instance, field: 'weekNo', 'error')} required">

@@ -15,11 +15,6 @@ class R303 {
 
     static hasMany = [ entry :R303Entry ]
 
-
-
-
-
-
     static constraints = {
     }
 }
