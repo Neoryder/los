@@ -45,8 +45,8 @@
 				<li class="fieldcontain">
 					<span id="lokal-label" class="property-label"><g:message code="distrito.lokal.label" default="Lokal" /></span>
 					
-						<g:each in="${distritoInstance.lokal}" var="l">
-						<span class="property-value" aria-labelledby="lokal-label"><g:link controller="lokal" action="show" id="${l.id}">${l?.encodeAsHTML()}</g:link></span>
+						<g:each in="${distritoInstance.lokal.sort { it.id }}" var="l">
+						<span class="property-value" aria-labelledby="lokal-label"><g:link controller="lokal" action="show" id="${l.id}">${l?.lokal?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

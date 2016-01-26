@@ -25,8 +25,8 @@
 	</label>
 	
 <ul class="one-to-many">
-<g:each in="${distritoInstance?.lokal?}" var="l">
-    <li><g:link controller="lokal" action="show" id="${l.id}">${l?.encodeAsHTML()}</g:link></li>
+<g:each in="${distritoInstance?.lokal?.sort { it.id }}" var="l">
+    <li><g:link controller="lokal" action="show" id="${l.id}">${l?.lokal?.encodeAsHTML()}</g:link></li>
 </g:each>
 <li class="add">
 <g:link controller="lokal" action="create" params="['distrito.id': distritoInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'lokal.label', default: 'Lokal')])}</g:link>

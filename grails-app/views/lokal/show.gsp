@@ -45,7 +45,7 @@
 				<li class="fieldcontain">
 					<span id="distrito-label" class="property-label"><g:message code="lokal.distrito.label" default="Distrito" /></span>
 					
-						<span class="property-value" aria-labelledby="distrito-label"><g:link controller="distrito" action="show" id="${lokalInstance?.distrito?.id}">${lokalInstance?.distrito?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="distrito-label"><g:link controller="distrito" action="show" id="${lokalInstance?.distrito?.id}">${lokalInstance?.distrito?.distrito?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

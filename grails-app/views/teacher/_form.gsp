@@ -10,28 +10,12 @@
 	<g:textField name="assignedNumber" value="${teacherInstance?.assignedNumber}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: teacherInstance, field: 'firstName', 'error')} ">
-	<label for="firstName">
-		<g:message code="teacher.firstName.label" default="First Name" />
+<div class="fieldcontain ${hasErrors(bean: teacherInstance, field: 'name', 'error')} ">
+	<label for="name">
+		<g:message code="teacher.name.label" default="Name" />
 		
 	</label>
-	<g:textField name="firstName" value="${teacherInstance?.firstName}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: teacherInstance, field: 'middleName', 'error')} ">
-	<label for="middleName">
-		<g:message code="teacher.middleName.label" default="Middle Name" />
-		
-	</label>
-	<g:textField name="middleName" value="${teacherInstance?.middleName}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: teacherInstance, field: 'lastName', 'error')} ">
-	<label for="lastName">
-		<g:message code="teacher.lastName.label" default="Last Name" />
-		
-	</label>
-	<g:textField name="lastName" value="${teacherInstance?.lastName}"/>
+	<g:textField name="name" value="${teacherInstance?.name}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: teacherInstance, field: 'type', 'error')} ">
@@ -47,6 +31,14 @@
 		<g:message code="teacher.status.label" default="Status" />
 		
 	</label>
-	<g:select name="status" from="${teacherInstance.constraints.status.inList}" value="${teacherInstance?.status}" valueMessagePrefix="teacher.status" noSelection="['': '']"/>
+	<g:select name="status" from="${teacherInstance.constraints.status.inList}" value="${teacherInstance?.status}" valueMessagePrefix="teacher.status" noSelection="['': 'Please Choose Status']"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: teacherInstance, field: 'lokal', 'error')} ">
+	<label for="lokal">
+		<g:message code="teacher.lokal.label" default="Lokal" />
+		
+	</label>
+	<g:select id="lokal" name="lokal.id" from="${los.Lokal.list()}" optionKey="id" optionValue="lokal" noSelection="${[null:'Please Choose a lokal']}"  value="${teacherInstance?.lokal?.id}" class="many-to-one" />
 </div>
 

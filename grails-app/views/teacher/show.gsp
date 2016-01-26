@@ -32,29 +32,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${teacherInstance?.firstName}">
+				<g:if test="${teacherInstance?.name}">
 				<li class="fieldcontain">
-					<span id="firstName-label" class="property-label"><g:message code="teacher.firstName.label" default="First Name" /></span>
+					<span id="name-label" class="property-label"><g:message code="teacher.name.label" default="Name" /></span>
 					
-						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${teacherInstance}" field="firstName"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${teacherInstance?.middleName}">
-				<li class="fieldcontain">
-					<span id="middleName-label" class="property-label"><g:message code="teacher.middleName.label" default="Middle Name" /></span>
-					
-						<span class="property-value" aria-labelledby="middleName-label"><g:fieldValue bean="${teacherInstance}" field="middleName"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${teacherInstance?.lastName}">
-				<li class="fieldcontain">
-					<span id="lastName-label" class="property-label"><g:message code="teacher.lastName.label" default="Last Name" /></span>
-					
-						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${teacherInstance}" field="lastName"/></span>
+						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${teacherInstance}" field="name"/></span>
 					
 				</li>
 				</g:if>
@@ -73,6 +55,15 @@
 					<span id="status-label" class="property-label"><g:message code="teacher.status.label" default="Status" /></span>
 					
 						<span class="property-value" aria-labelledby="status-label"><g:fieldValue bean="${teacherInstance}" field="status"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${teacherInstance?.lokal}">
+				<li class="fieldcontain">
+					<span id="lokal-label" class="property-label"><g:message code="teacher.lokal.label" default="Lokal" /></span>
+					
+						<span class="property-value" aria-labelledby="lokal-label"><g:link controller="lokal" action="show" id="${teacherInstance?.lokal?.id}">${teacherInstance?.lokal?.lokal?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
