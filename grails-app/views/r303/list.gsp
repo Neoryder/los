@@ -44,9 +44,9 @@
 					
 						<td><g:formatDate date="${r303Instance.dateTo}" /></td>
 					
-						<td>${fieldValue(bean: r303Instance, field: "lokal")}</td>
+						<td>${fieldValue(bean: r303Instance, field: "lokal.lokal")}</td>
 					
-						<td>${fieldValue(bean: r303Instance, field: "teacher")}</td>
+						<td>${fieldValue(bean: r303Instance, field: "teacher.name")}</td>
 					
 						<td>${fieldValue(bean: r303Instance, field: "weekNo")}</td>
 					
