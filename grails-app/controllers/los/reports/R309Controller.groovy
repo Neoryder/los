@@ -21,6 +21,10 @@ class R309Controller {
 
     def save() {
         def r309Instance = new R309(params)
+        Calendar calendar = Calendar.getInstance()
+        calendar.setTime(r309Instance.getDateFrom())
+        calendar.add(Calendar.DAY_OF_YEAR,7)
+        r309Instance.dateTo = calendar.getTime()
         if (!r309Instance.save(flush: true)) {
             render(view: "create", model: [r309Instance: r309Instance])
             return

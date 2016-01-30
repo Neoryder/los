@@ -5,7 +5,6 @@ import los.Student
 class R303Entry {
 
     Student student
-
     Integer lessonMon
     Integer lessonTue
     Integer lessonWed
@@ -19,5 +18,12 @@ class R303Entry {
 
 
     static constraints = {
+        lessonMon max: 30
+        lessonTue max: 30
+        lessonWed max: 30
+        lessonThu max: 30
+        lessonFri max: 30
+        lessonSat max: 30
+        lessonSun max: 30
     }
 }

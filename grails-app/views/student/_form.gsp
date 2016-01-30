@@ -79,8 +79,9 @@
 		<g:message code="student.birthDate.label" default="Birth Date" />
 		<span class="required-indicator">*</span>
 	</label>
-	%{--<g:datePicker name="birthDate" precision="day"  value="${studentInstance?.birthDate}"  />--}%
-    <div id="birthDate" value="${studentInstance?.birthDate?: null} ></div>
+	<g:datePicker name="birthDate" precision="day"  value="${studentInstance?.birthDate}"  />
+    %{--<div id="birthDatePicker"   value="${studentInstance?.birthDate}" ></div>--}%
+    %{--<input type="hidden"  id="birthDate" name="birthDate"   value="${studentInstance?.birthDate}" >--}%
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'startDate', 'error')} ">

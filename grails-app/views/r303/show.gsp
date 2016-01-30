@@ -27,7 +27,7 @@
 				<li class="fieldcontain">
 					<span id="dateFrom-label" class="property-label"><g:message code="r303.dateFrom.label" default="Date From" /></span>
 					
-						<span class="property-value" aria-labelledby="dateFrom-label"><g:formatDate date="${r303Instance?.dateFrom}" /></span>
+						<span class="property-value" aria-labelledby="dateFrom-label"><g:formatDate date="${r303Instance?.dateFrom}" format="MMM-dd-yyyy" /></span>
 					
 				</li>
 				</g:if>
@@ -36,7 +36,7 @@
 				<li class="fieldcontain">
 					<span id="dateTo-label" class="property-label"><g:message code="r303.dateTo.label" default="Date To" /></span>
 					
-						<span class="property-value" aria-labelledby="dateTo-label"><g:formatDate date="${r303Instance?.dateTo}" /></span>
+						<span class="property-value" aria-labelledby="dateTo-label"><g:formatDate date="${r303Instance?.dateTo}" format="MMM-dd-yyyy"  /></span>
 					
 				</li>
 				</g:if>
@@ -56,7 +56,7 @@
 				<li class="fieldcontain">
 					<span id="lokal-label" class="property-label"><g:message code="r303.lokal.label" default="Lokal" /></span>
 					
-						<span class="property-value" aria-labelledby="lokal-label"><g:link controller="lokal" action="show" id="${r303Instance?.lokal?.id}">${r303Instance?.lokal?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="lokal-label"><g:link controller="lokal" action="show" id="${r303Instance?.lokal?.id}">${r303Instance?.lokal?.lokal.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -65,7 +65,7 @@
 				<li class="fieldcontain">
 					<span id="teacher-label" class="property-label"><g:message code="r303.teacher.label" default="Teacher" /></span>
 					
-						<span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${r303Instance?.teacher?.id}">${r303Instance?.teacher?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${r303Instance?.teacher?.id}">${(r303Instance?.teacher?.name+' - '+r303Instance?.teacher?.assignedNumber).encodeAsHTML() }</g:link></span>
 					
 				</li>
 				</g:if>

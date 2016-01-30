@@ -7,6 +7,7 @@ class R303 {
 
     Lokal lokal
     Integer weekNo
+//    @BindingFormat("MM/dd/yyyy")
     Date dateFrom // Date Monday
     Date dateTo // Date Sunday of that week
     Teacher teacher

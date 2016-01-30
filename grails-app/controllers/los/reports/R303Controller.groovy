@@ -2,6 +2,8 @@ package los.reports
 
 import org.springframework.dao.DataIntegrityViolationException
 
+import java.text.SimpleDateFormat
+
 class R303Controller {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -20,8 +22,27 @@ class R303Controller {
     }
 
     def save() {
+
+        println "params:"+params
         def r303Instance = new R303(params)
+        println params.dateFrom
+        SimpleDateFormat sdfmt1 = new SimpleDateFormat("MM/dd/yyyy");
+        Date dateFrom = sdfmt1.parse( params.dateFrom.toString() );
+        r303Instance.dateFrom =  dateFrom
+        Calendar calendar = Calendar.getInstance()
+        calendar.setTime(dateFrom)
+        calendar.add(Calendar.DAY_OF_YEAR,7)
+        calendar.set(Calendar.HOUR,0)
+        calendar.set(Calendar.MINUTE,0)
+        calendar.set(Calendar.MILLISECOND,0)
+        r303Instance.dateTo = calendar.getTime()
+        println r303Instance.dateTo
+        println r303Instance.clearErrors()
+        println r303Instance.validate()
         if (!r303Instance.save(flush: true)) {
+            r303Instance.errors.allErrors.each {
+                println it
+            }
             render(view: "create", model: [r303Instance: r303Instance])
             return
         }
@@ -71,6 +92,21 @@ class R303Controller {
         }
 
         r303Instance.properties = params
+
+        println params.dateFrom
+        SimpleDateFormat sdfmt1 = new SimpleDateFormat("MM/dd/yyyy");
+        Date dateFrom = sdfmt1.parse( params.dateFrom.toString() );
+        r303Instance.dateFrom =  dateFrom
+        Calendar calendar = Calendar.getInstance()
+        calendar.setTime(dateFrom)
+        calendar.add(Calendar.DAY_OF_YEAR,7)
+        calendar.set(Calendar.HOUR,0)
+        calendar.set(Calendar.MINUTE,0)
+        calendar.set(Calendar.MILLISECOND,0)
+        r303Instance.dateTo = calendar.getTime()
+        println r303Instance.dateTo
+        println r303Instance.clearErrors()
+        println r303Instance.validate()
 
         if (!r303Instance.save(flush: true)) {
             render(view: "edit", model: [r303Instance: r303Instance])

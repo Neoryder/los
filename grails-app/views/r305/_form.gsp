@@ -10,13 +10,13 @@
 	<g:datePicker name="dateFrom" precision="day"  value="${r305Instance?.dateFrom}"  />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: r305Instance, field: 'dateTo', 'error')} required">
-	<label for="dateTo">
-		<g:message code="r305.dateTo.label" default="Date To" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="dateTo" precision="day"  value="${r305Instance?.dateTo}"  />
-</div>
+%{--<div class="fieldcontain ${hasErrors(bean: r305Instance, field: 'dateTo', 'error')} required">--}%
+	%{--<label for="dateTo">--}%
+		%{--<g:message code="r305.dateTo.label" default="Date To" />--}%
+		%{--<span class="required-indicator">*</span>--}%
+	%{--</label>--}%
+	%{--<g:datePicker name="dateTo" precision="day"  value="${r305Instance?.dateTo}"  />--}%
+%{--</div>--}%
 
 <div class="fieldcontain ${hasErrors(bean: r305Instance, field: 'entry', 'error')} ">
 	<label for="entry">

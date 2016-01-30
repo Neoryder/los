@@ -5,8 +5,30 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'r303.label', default: 'R303')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
-	</head>
+        %{--<link rel="stylesheet" href="${resource(dir: 'css/bootstrap', file: 'bootstrap.css')}" type="text/css">--}%
+        %{--<link rel="stylesheet" href="${resource(dir: 'css/bootstrap', file: 'bootstrap-datepicker3.css')}" type="text/css">--}%
+        %{--<link rel="stylesheet" href="${resource(dir: 'css/bootstrap', file: 'selectize.css')}" type="text/css">--}%
+        %{--<link rel="stylesheet" href="${resource(dir: 'css/bootstrap', file: 'selectize.bootstrap3.css')}" type="text/css">--}%
+        %{--<g:javascript src="bootstrap.js"/>--}%
+        %{--<g:javascript src="bootstrap-datepicker.js"/>--}%
+        <r:require module="jquery"/>
+        <r:require module="jquery-ui-dev"/>
+
+    </head>
 	<body>
+    <script>
+        $(document).ready(function () {
+            $( "#dateFrom" ).datepicker({
+                        beforeShowDay: function(date){
+                            var day = date.getDay();
+//                            return [day == 1 || day == 4,""]; //Monday and Thursday
+                            return [day == 1 ,""];
+                        }
+                    }
+
+            );
+        });
+    </script>
 		<a href="#create-r303" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
@@ -26,7 +48,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form action="save" >
+			<g:form action="save"  >
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>

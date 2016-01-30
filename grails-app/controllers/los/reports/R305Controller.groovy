@@ -21,6 +21,10 @@ class R305Controller {
 
     def save() {
         def r305Instance = new R305(params)
+        Calendar calendar = Calendar.getInstance()
+        calendar.setTime(r305Instance.getDateFrom())
+        calendar.add(Calendar.DAY_OF_YEAR,7)
+        r305Instance.dateTo = calendar.getTime()
         if (!r305Instance.save(flush: true)) {
             render(view: "create", model: [r305Instance: r305Instance])
             return

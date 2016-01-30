@@ -7,16 +7,18 @@
 		<g:message code="r303.dateFrom.label" default="Date From" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="dateFrom" precision="day"  value="${r303Instance?.dateFrom}"  />
+    <g:textField name="dateFrom" value="${formatDate(date:r303Instance?.dateFrom,format: 'MM/dd/yyyy')}"
+                 class="form-control input-sm" placeholder="MM/DD/YYYY"/>
+	%{--<g:datePicker name="dateFrom" precision="day"  value="${r303Instance?.dateFrom}"  />--}%
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: r303Instance, field: 'dateTo', 'error')} required">
-	<label for="dateTo">
-		<g:message code="r303.dateTo.label" default="Date To" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="dateTo" precision="day"  value="${r303Instance?.dateTo}"  />
-</div>
+%{--<div class="fieldcontain ${hasErrors(bean: r303Instance, field: 'dateTo', 'error')} required">--}%
+	%{--<label for="dateTo">--}%
+		%{--<g:message code="r303.dateTo.label" default="Date To" />--}%
+		%{--<span class="required-indicator">*</span>--}%
+	%{--</label>--}%
+	%{--<g:datePicker name="dateTo" precision="day"  value="${r303Instance?.dateTo}"  />--}%
+%{--</div>--}%
 
 <div class="fieldcontain ${hasErrors(bean: r303Instance, field: 'entry', 'error')} ">
 	<label for="entry">

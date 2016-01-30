@@ -15,8 +15,9 @@
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
 		<link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.classic.css')}" type="text/css">
-        <g:javascript library="jquery" plugin="jquery"/>
-        <script src="${resource(dir: 'js/jqwidgets', file: 'jqx-all.js')}" type="text/javascript"></script>
+
+        %{--<g:javascript library="jquery" plugin="jquery"/>--}%
+        %{--<script src="${resource(dir: 'js/jqwidgets', file: 'jqx-all.js')}" type="text/javascript"></script>--}%
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>

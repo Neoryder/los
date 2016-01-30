@@ -24,7 +24,7 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="dateFrom" title="${message(code: 'r303.dateFrom.label', default: 'Date From')}" />
+						<g:sortableColumn property="dateFrom"  title="${message(code: 'r303.dateFrom.label', default: 'Date From')}" />
 					
 						<g:sortableColumn property="dateTo" title="${message(code: 'r303.dateTo.label', default: 'Date To')}" />
 					
@@ -40,9 +40,9 @@
 				<g:each in="${r303InstanceList}" status="i" var="r303Instance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${r303Instance.id}">${fieldValue(bean: r303Instance, field: "dateFrom")}</g:link></td>
+						<td><g:link action="show" id="${r303Instance.id}"><g:formatDate date="${r303Instance.dateFrom}" format="MMM-dd-yyyy" /></g:link></td>
 					
-						<td><g:formatDate date="${r303Instance.dateTo}" /></td>
+						<td><g:formatDate date="${r303Instance.dateTo}" format="MMM-dd-yyyy" /></td>
 					
 						<td>${fieldValue(bean: r303Instance, field: "lokal.lokal")}</td>
 					

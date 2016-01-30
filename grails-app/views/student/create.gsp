@@ -9,16 +9,22 @@
         <link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.base.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.classic.css')}" type="text/css">
         <script src="${resource(dir: 'js/jqwidgets', file: 'jqx-all.js')}" type="text/javascript"></script>
+        %{--<script src="${resource(dir: 'js/jqwidgets', file: 'jqxdatetimeinput.js')}" type="text/javascript"></script>--}%
+        %{--<script src="${resource(dir: 'js/jqwidgets', file: 'jqxcalendar.js')}" type="text/javascript"></script>--}%
+        <script src="${resource(dir: 'js/jqwidgets/globalization', file: 'globalize.js')}" type="text/javascript"></script>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                // Create a jqxDateTimeInput
-//                $("#birthDate").jqxDateTimeInput({theme: "arctic",  width: '100px', height: '25px'});
-                $("#birthDate").jqxDateTimeInput({ width: '150px', height: '25px', showCalendarButton:true,  formatString: 'MMM-dd-yyyy', allowNullDate: true  });
-            });
-        </script>
     </head>
 	<body>
+    %{--<script type="text/javascript">--}%
+        %{--$(document).ready(function () {--}%
+            %{--$("#birthDatePicker").jqxDateTimeInput({ width: '150px', height: '25px', formatString:'MM/dd/yyyy'});--}%
+            %{--$("#birthDatePicker").on('valueChanged', function (event)--}%
+            %{--{--}%
+%{--//                var jsDate = event.args.date;--}%
+                %{--$("#birthDate").val($("#birthDatePicker").val())--}%
+            %{--});--}%
+        %{--});--}%
+    %{--</script>--}%
 
 		<a href="#create-student" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">

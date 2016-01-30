@@ -5,8 +5,23 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'r303.label', default: 'R303')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <r:require module="jquery"/>
+        <r:require module="jquery-ui-dev"/>
 	</head>
 	<body>
+    <script>
+        $(document).ready(function () {
+            $( "#dateFrom" ).datepicker({
+                        beforeShowDay: function(date){
+                            var day = date.getDay();
+//                            return [day == 1 || day == 4,""]; //Monday and Thursday
+                            return [day == 1 ,""];
+                        }
+                    }
+
+            );
+        });
+    </script>
 		<a href="#edit-r303" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
@@ -27,7 +42,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form method="post" >
+			<g:form method="post" action="update" >
 				<g:hiddenField name="id" value="${r303Instance?.id}" />
 				<g:hiddenField name="version" value="${r303Instance?.version}" />
 				<fieldset class="form">

@@ -2,6 +2,8 @@ package los
 
 import org.springframework.dao.DataIntegrityViolationException
 
+import java.text.SimpleDateFormat
+
 class StudentController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -16,10 +18,13 @@ class StudentController {
     }
 
     def create() {
+        println params
         [studentInstance: new Student(params)]
     }
 
     def save() {
+        println params
+        //todo Transform birthDate to saveable date
         def studentInstance = new Student(params)
         if (!studentInstance.save(flush: true)) {
             render(view: "create", model: [studentInstance: studentInstance])
