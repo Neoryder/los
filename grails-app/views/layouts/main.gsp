@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
 		<link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.classic.css')}" type="text/css">
-
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'select2.css')}" type="text/css" />
         %{--<g:javascript library="jquery" plugin="jquery"/>--}%
         %{--<script src="${resource(dir: 'js/jqwidgets', file: 'jqx-all.js')}" type="text/javascript"></script>--}%
 		<g:layoutHead/>
@@ -28,6 +28,8 @@
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
+        <g:javascript src="select2.full.js"/>
+        %{--<g:javascript src="utility_loader.js"/>--}%
 		<r:layoutResources />
 	</body>
 </html>
