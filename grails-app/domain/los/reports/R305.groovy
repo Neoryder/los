@@ -17,4 +17,8 @@ class R305 {
 
     static constraints = {
     }
+
+    String toString(){
+        return weekNo+"|"+teacher.name+"|"+lokal.lokal+"|"+dateFrom.format("MM/dd/yyyy")+"-"+dateTo.format("MM/dd/yyyy")
+    }
 }

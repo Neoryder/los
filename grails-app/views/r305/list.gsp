@@ -23,32 +23,32 @@
 			<table>
 				<thead>
 					<tr>
-					
-						<g:sortableColumn property="dateFrom" title="${message(code: 'r305.dateFrom.label', default: 'Date From')}" />
-					
-						<g:sortableColumn property="dateTo" title="${message(code: 'r305.dateTo.label', default: 'Date To')}" />
+
+                        <g:sortableColumn property="weekNo" title="${message(code: 'r305.weekNo.label', default: 'Week No')}" />
 					
 						<th><g:message code="r305.lokal.label" default="Lokal" /></th>
 					
 						<th><g:message code="r305.teacher.label" default="Teacher" /></th>
-					
-						<g:sortableColumn property="weekNo" title="${message(code: 'r305.weekNo.label', default: 'Week No')}" />
-					
+
+                        <g:sortableColumn property="dateFrom" title="${message(code: 'r305.dateFrom.label', default: 'Date From')}" />
+
+                        <g:sortableColumn property="dateTo" title="${message(code: 'r305.dateTo.label', default: 'Date To')}" />
+
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${r305InstanceList}" status="i" var="r305Instance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+
+                        <td><g:link action="show" id="${r305Instance.id}">${fieldValue(bean: r305Instance, field: "weekNo")}</g:link></td>
+
+                        <td>${fieldValue(bean: r305Instance, field: "lokal.lokal")}</td>
+
+                        <td>${fieldValue(bean: r305Instance, field: "teacher.name")}</td>
+
+						<td><g:formatDate date="${r305Instance.dateFrom}" format="MM/dd/yyyy" /></td>
 					
-						<td><g:link action="show" id="${r305Instance.id}">${fieldValue(bean: r305Instance, field: "dateFrom")}</g:link></td>
-					
-						<td><g:formatDate date="${r305Instance.dateTo}" /></td>
-					
-						<td>${fieldValue(bean: r305Instance, field: "lokal.lokal")}</td>
-					
-						<td>${fieldValue(bean: r305Instance, field: "teacher.name")}</td>
-					
-						<td>${fieldValue(bean: r305Instance, field: "weekNo")}</td>
+						<td><g:formatDate date="${r305Instance.dateTo}" format="MM/dd/yyyy" /></td>
 					
 					</tr>
 				</g:each>

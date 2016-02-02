@@ -22,7 +22,6 @@ class R303Controller {
     }
 
     def save() {
-
         println "params:"+params
         def r303Instance = new R303(params)
         println params.dateFrom

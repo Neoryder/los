@@ -27,7 +27,8 @@ class R305EntryController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'r305Entry.label', default: 'R305Entry'), r305EntryInstance.id])
-        redirect(action: "show", id: r305EntryInstance.id)
+//        redirect(action: "show", id: r305EntryInstance.id)
+        redirect(action: 'create',params: ['r305.id':r305EntryInstance?.r305?.id])
     }
 
     def show(Long id) {

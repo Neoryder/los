@@ -7,7 +7,9 @@
 		<g:message code="r305.dateFrom.label" default="Date From" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="dateFrom" precision="day"  value="${r305Instance?.dateFrom}"  />
+	%{--<g:datePicker name="dateFrom" precision="day"  value="${r305Instance?.dateFrom}"  />--}%
+    <g:textField name="dateFrom" value="${formatDate(date:r305Instance?.dateFrom,format: 'MM/dd/yyyy')}"
+                 class="form-control input-sm" placeholder="MM/DD/YYYY"/>
 </div>
 
 %{--<div class="fieldcontain ${hasErrors(bean: r305Instance, field: 'dateTo', 'error')} required">--}%
@@ -48,7 +50,12 @@
 		<g:message code="r305.teacher.label" default="Teacher" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="teacher" name="teacher.id" from="${los.Teacher.list()}" optionKey="id"  optionValue="assignedNumber" noSelection="${[null:'Please Choose a assigned number']}" required="" value="${r305Instance?.teacher?.id}" class="many-to-one"/>
+	%{--<g:select id="teacher" name="teacher.id" from="${los.Teacher.list()}" optionKey="id"  optionValue="assignedNumber" noSelection="${[null:'Please Choose a assigned number']}" required="" value="${r305Instance?.teacher?.id}" class="many-to-one"/>--}%
+
+    <select id="teacher" class="select2_dropdown bigdrop" >
+        <option value="${r305Instance?.teacher?.assignedNumber}" selected="selected"  >${r305Instance?.teacher?.name+'|'+r305Instance?.teacher?.assignedNumber}</option>
+    </select>
+    <g:hiddenField name="teacher.id" id="teacherId" value="${r305Instance?.teacher?.id}" ></g:hiddenField>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: r305Instance, field: 'weekNo', 'error')} required">

@@ -26,18 +26,14 @@
 				<g:if test="${r305Instance?.dateFrom}">
 				<li class="fieldcontain">
 					<span id="dateFrom-label" class="property-label"><g:message code="r305.dateFrom.label" default="Date From" /></span>
-					
-						<span class="property-value" aria-labelledby="dateFrom-label"><g:formatDate date="${r305Instance?.dateFrom}" /></span>
-					
+                    <span class="property-value" aria-labelledby="dateFrom-label"><g:formatDate date="${r305Instance?.dateFrom}" format="MMM-dd-yyyy" /></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${r305Instance?.dateTo}">
 				<li class="fieldcontain">
 					<span id="dateTo-label" class="property-label"><g:message code="r305.dateTo.label" default="Date To" /></span>
-					
-						<span class="property-value" aria-labelledby="dateTo-label"><g:formatDate date="${r305Instance?.dateTo}" /></span>
-					
+                    <span class="property-value" aria-labelledby="dateTo-label"><g:formatDate date="${r305Instance?.dateTo}" format="MMM-dd-yyyy"  /></span>
 				</li>
 				</g:if>
 			
@@ -55,18 +51,14 @@
 				<g:if test="${r305Instance?.lokal}">
 				<li class="fieldcontain">
 					<span id="lokal-label" class="property-label"><g:message code="r305.lokal.label" default="Lokal" /></span>
-					
-						<span class="property-value" aria-labelledby="lokal-label"><g:link controller="lokal" action="show" id="${r305Instance?.lokal?.id}">${r305Instance?.lokal?.encodeAsHTML()}</g:link></span>
-					
+                    <span class="property-value" aria-labelledby="lokal-label"><g:link controller="lokal" action="show" id="${r305Instance?.lokal?.id}">${r305Instance?.lokal?.lokal.encodeAsHTML()}</g:link></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${r305Instance?.teacher}">
 				<li class="fieldcontain">
 					<span id="teacher-label" class="property-label"><g:message code="r305.teacher.label" default="Teacher" /></span>
-					
-						<span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${r305Instance?.teacher?.id}">${r305Instance?.teacher?.encodeAsHTML()}</g:link></span>
-					
+                    <span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${r305Instance?.teacher?.id}">${(r305Instance?.teacher?.name+' - '+r305Instance?.teacher?.assignedNumber).encodeAsHTML() }</g:link></span>
 				</li>
 				</g:if>
 			
