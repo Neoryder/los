@@ -15,8 +15,8 @@
         var autoCompleteTeacherUrl = '${g.createLink(controller:'autoComplete', action:'autoCompleteTeacher')}';
         var autoCompleteR303Url = '${g.createLink(controller:'autoComplete', action:'autoCompleteR303')}';
 
-        function formatResultR303(results) {
-            console.log('formatResultR303');
+        function formatResultR305(results) {
+            console.log('formatResultR305');
             var markup = '<table><tr><td>';
             markup += '<div>' + results.teacher + '</div>';
             markup += '<div class="autocomplete_id_below">' + results.dateFrom + '</div>';
@@ -28,8 +28,8 @@
             return markup;
         }
 
-        function formatSelectionR303(result) {
-            console.log('formatSelectionR303');
+        function formatSelectionR305(result) {
+            console.log('formatSelectionR305');
             console.log(result);
 
             if(result.dateFrom){
@@ -118,7 +118,7 @@
 
 
 
-            $("#r303").select2({
+            $("#r305").select2({
                 ajax: {
                     url: autoCompleteR303Url,
                     dataType: 'json',
@@ -152,9 +152,9 @@
                 templateSelection: formatSelectionR303
             });
 
-            var $eventSelect = $("#r303");
+            var $eventSelect = $("#r305");
             $eventSelect.on("change", function (e) {
-                $("#r303Id").val($("#r303").val())
+                $("#r305Id").val($("#r305").val())
             });
 
 

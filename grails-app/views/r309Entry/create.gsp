@@ -153,9 +153,9 @@
                 templateSelection: formatSelectionR303
             });
 
-            var $eventSelect = $("#r303");
+            var $eventSelect = $("#r309");
             $eventSelect.on("change", function (e) {
-                $("#r303Id").val($("#r303").val())
+                $("#r309Id").val($("#r309").val())
             });
 
 

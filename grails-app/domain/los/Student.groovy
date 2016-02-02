@@ -145,4 +145,8 @@ class Student {
         return lastName+','+firstName+' '+ middleName + (husbandsLastName?"-"+husbandsLastName:'')
     }
 
+    String toString(){
+        return referenceNumber01+"|"+lastName+','+firstName+' '+ middleName + (husbandsLastName?"-"+husbandsLastName:'')
+    }
+
 }
