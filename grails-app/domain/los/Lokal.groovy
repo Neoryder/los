@@ -11,4 +11,8 @@ class Lokal {
         lokal maxSize: 200
         lcode maxSize: 3
     }
+
+    String toString(){
+        return distrito.distrito+","+lokal
+    }
 }

@@ -2,6 +2,8 @@ package los.reports
 
 import org.springframework.dao.DataIntegrityViolationException
 
+import java.text.SimpleDateFormat
+
 class R309Controller {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -21,10 +23,22 @@ class R309Controller {
 
     def save() {
         def r309Instance = new R309(params)
+        SimpleDateFormat sdfmt1 = new SimpleDateFormat("MM/dd/yyyy");
+        Date dateFrom = sdfmt1.parse( params.dateFrom.toString() );
+        r309Instance.dateFrom =  dateFrom
+        Date date = sdfmt1.parse( params.date.toString() );
+        r309Instance.date = date
         Calendar calendar = Calendar.getInstance()
-        calendar.setTime(r309Instance.getDateFrom())
+        calendar.setTime(dateFrom)
         calendar.add(Calendar.DAY_OF_YEAR,7)
+        calendar.set(Calendar.HOUR,0)
+        calendar.set(Calendar.MINUTE,0)
+        calendar.set(Calendar.SECOND,0)
+        calendar.set(Calendar.MILLISECOND,0)
         r309Instance.dateTo = calendar.getTime()
+        println r309Instance.dateTo
+        println r309Instance.clearErrors()
+        println r309Instance.validate()
         if (!r309Instance.save(flush: true)) {
             render(view: "create", model: [r309Instance: r309Instance])
             return

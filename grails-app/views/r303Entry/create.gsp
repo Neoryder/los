@@ -9,7 +9,8 @@
         <r:require module="jquery-ui-dev"/>
 	</head>
 	<body>
-    <script type="text/javascript">
+
+        <script type="text/javascript">
         //Auto Complete
         var autoCompleteStudentUrl = '${g.createLink(controller:'autoComplete', action:'autoCompleteStudent')}';
         var autoCompleteTeacherUrl = '${g.createLink(controller:'autoComplete', action:'autoCompleteTeacher')}';
@@ -161,6 +162,7 @@
 
         });
     </script>
+
 		<a href="#create-r303Entry" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>

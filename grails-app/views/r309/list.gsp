@@ -23,6 +23,8 @@
 			<table>
 				<thead>
 					<tr>
+
+                        <g:sortableColumn property="weekNo" title="${message(code: 'r309.weekNo.label', default: 'Week No')}" />
 					
 						<g:sortableColumn property="dateFrom" title="${message(code: 'r309.dateFrom.label', default: 'Date From')}" />
 					
@@ -32,24 +34,23 @@
 					
 						<th><g:message code="r309.teacher.label" default="Teacher" /></th>
 					
-						<g:sortableColumn property="weekNo" title="${message(code: 'r309.weekNo.label', default: 'Week No')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${r309InstanceList}" status="i" var="r309Instance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${r309Instance.id}">${fieldValue(bean: r309Instance, field: "dateFrom")}</g:link></td>
+						<td><g:link action="show" id="${r309Instance.id}">${fieldValue(bean: r309Instance, field: "weekNo")}</g:link></td>
 					
-						<td><g:formatDate date="${r309Instance.dateTo}" /></td>
-					
+						<td><g:formatDate date="${r309Instance.dateFrom}" /></td>
+
+                        <td><g:formatDate date="${r309Instance.dateTo}" /></td>
+
 						<td>${fieldValue(bean: r309Instance, field: "lokal.lokal")}</td>
 					
 						<td>${fieldValue(bean: r309Instance, field: "teacher.name")}</td>
 					
-						<td>${fieldValue(bean: r309Instance, field: "weekNo")}</td>
-					
+
 					</tr>
 				</g:each>
 				</tbody>

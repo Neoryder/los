@@ -26,20 +26,23 @@
 				<g:if test="${r309Instance?.dateFrom}">
 				<li class="fieldcontain">
 					<span id="dateFrom-label" class="property-label"><g:message code="r309.dateFrom.label" default="Date From" /></span>
-					
-						<span class="property-value" aria-labelledby="dateFrom-label"><g:formatDate date="${r309Instance?.dateFrom}" /></span>
-					
+                    <span class="property-value" aria-labelledby="dateFrom-label"><g:formatDate date="${r309Instance?.dateFrom}" format="MM/dd/yyyy" /></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${r309Instance?.dateTo}">
 				<li class="fieldcontain">
 					<span id="dateTo-label" class="property-label"><g:message code="r309.dateTo.label" default="Date To" /></span>
-					
-						<span class="property-value" aria-labelledby="dateTo-label"><g:formatDate date="${r309Instance?.dateTo}" /></span>
-					
+                    <span class="property-value" aria-labelledby="dateTo-label"><g:formatDate date="${r309Instance?.dateTo}" format="MM/dd/yyyy" /></span>
 				</li>
 				</g:if>
+
+                <g:if test="${r309Instance?.date}">
+                    <li class="fieldcontain">
+                        <span id="date-label" class="property-label"><g:message code="r309.date.label" default="Date" /></span>
+                        <span class="property-value" aria-labelledby="date-label"><g:formatDate date="${r309Instance?.date}" format="MM/dd/yyyy"/> ${r309Instance?.getDay()}</span>
+                    </li>
+                </g:if>
 			
 				<g:if test="${r309Instance?.entry}">
 				<li class="fieldcontain">
@@ -55,27 +58,21 @@
 				<g:if test="${r309Instance?.lokal}">
 				<li class="fieldcontain">
 					<span id="lokal-label" class="property-label"><g:message code="r309.lokal.label" default="Lokal" /></span>
-					
-						<span class="property-value" aria-labelledby="lokal-label"><g:link controller="lokal" action="show" id="${r309Instance?.lokal?.id}">${r309Instance?.lokal?.encodeAsHTML()}</g:link></span>
-					
+                    <span class="property-value" aria-labelledby="lokal-label"><g:link controller="lokal" action="show" id="${r309Instance?.lokal?.id}">${r309Instance?.lokal?.encodeAsHTML()}</g:link></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${r309Instance?.teacher}">
 				<li class="fieldcontain">
 					<span id="teacher-label" class="property-label"><g:message code="r309.teacher.label" default="Teacher" /></span>
-					
-						<span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${r309Instance?.teacher?.id}">${r309Instance?.teacher?.encodeAsHTML()}</g:link></span>
-					
+                    <span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${r309Instance?.teacher?.id}">${r309Instance?.teacher?.encodeAsHTML()}</g:link></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${r309Instance?.weekNo}">
 				<li class="fieldcontain">
 					<span id="weekNo-label" class="property-label"><g:message code="r309.weekNo.label" default="Week No" /></span>
-					
-						<span class="property-value" aria-labelledby="weekNo-label"><g:fieldValue bean="${r309Instance}" field="weekNo"/></span>
-					
+                    <span class="property-value" aria-labelledby="weekNo-label"><g:fieldValue bean="${r309Instance}" field="weekNo"/></span>
 				</li>
 				</g:if>
 			

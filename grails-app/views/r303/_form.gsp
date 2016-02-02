@@ -54,7 +54,6 @@
         <option value="${r303Instance?.teacher?.assignedNumber}" selected="selected"  >${r303Instance?.teacher?.name+'|'+r303Instance?.teacher?.assignedNumber}</option>
     </select>
     <g:hiddenField name="teacher.id" id="teacherId" value="${r303Instance?.teacher?.id}" ></g:hiddenField>
-    %{--<input name="teacher.id" id="teacher" type="text" class="select2_dropdown bigdrop"  value="" />--}%
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: r303Instance, field: 'weekNo', 'error')} required">

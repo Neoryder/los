@@ -31,4 +31,9 @@ class Teacher {
     String type
     String status = 'active'
 
+
+    String toString(){
+        return assignedNumber+"|"+name
+    }
+
 }
