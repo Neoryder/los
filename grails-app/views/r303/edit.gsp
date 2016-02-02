@@ -22,6 +22,113 @@
             );
         });
     </script>
+    <script type="text/javascript">
+        //Auto Complete
+        var autoCompleteStudentUrl = '${g.createLink(controller:'autoComplete', action:'autoCompleteStudent')}';
+        var autoCompleteTeacherUrl = '${g.createLink(controller:'autoComplete', action:'autoCompleteTeacher')}';
+
+        function formatResultTeacher(results) {
+            console.log('formatResultTeacher');
+            var markup = '<table><tr><td>';
+            markup += '<div>' + results.label + '</div>';
+            markup += '<div class="autocomplete_id_below">' + results.assignedNumber + '</div>';
+            markup += '<div class="autocomplete_id_below">' + results.id + '</div>';
+            markup += '</td></tr></table>';
+            console.log(markup)
+            return markup;
+        }
+
+        function formatSelectionTeachers(result) {
+
+            console.log('formatSelectionTeachers'+result);
+            console.log (result.id)
+            console.log (result.text)
+            console.log (result.label)
+            console.log (result.assignedNumber)
+            if(result.label){
+                return result.label+"|"+result.assignedNumber;
+            } else {
+                return result.text;
+            }
+
+        }
+
+        function formatRepo (repo) {
+            if (repo.loading) return repo.text;
+
+            var markup = "<div class='select2-result-repository clearfix'>" +
+                    "<div class='select2-result-repository__avatar'><img src='" + repo.owner.avatar_url + "' /></div>" +
+                    "<div class='select2-result-repository__meta'>" +
+                    "<div class='select2-result-repository__title'>" + repo.full_name + "</div>";
+
+            if (repo.description) {
+                markup += "<div class='select2-result-repository__description'>" + repo.description + "</div>";
+            }
+
+            markup += "<div class='select2-result-repository__statistics'>" +
+            "<div class='select2-result-repository__forks'><i class='fa fa-flash'></i> " + repo.forks_count + " Forks</div>" +
+            "<div class='select2-result-repository__stargazers'><i class='fa fa-star'></i> " + repo.stargazers_count + " Stars</div>" +
+            "<div class='select2-result-repository__watchers'><i class='fa fa-eye'></i> " + repo.watchers_count + " Watchers</div>" +
+            "</div>" +
+            "</div></div>";
+
+            return markup;
+        }
+
+        function formatRepoSelection (repo) {
+            return repo.full_name || repo.text;
+        }
+
+
+        $(document).ready(function() {
+            var pageSize = 20;
+
+
+            $("#teacher").select2({
+                ajax: {
+                    url: autoCompleteTeacherUrl,
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            starts_with: params.term, // search term
+                            page: params.page
+                        };
+                    },
+                    processResults: function (data, params) {
+                        // parse the results into the format expected by Select2
+                        // since we are using custom formatting functions we do not need to
+                        // alter the remote JSON data, except to indicate that infinite
+                        // scrolling can be used
+                        params.page = params.page || 1;
+
+                        return {
+                            results: data.results,
+                            pagination: {
+                                more: (params.page * 30) < data.total
+                            }
+                        };
+                    },
+                    cache: true
+                },
+                escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+                minimumInputLength: 1,
+                dropdownCssClass: "bigdrop",
+                templateResult: formatResultTeacher,
+                templateSelection: formatSelectionTeachers
+            });
+            //, text:"${r303Instance?.teacher?.name+'|'+r303Instance?.teacher?.assignedNumber}"
+            var $eventSelect = $("#teacher");
+            $eventSelect.on("change", function (e) {
+                $("#teacherId").val($("#teacher").val())
+            });
+
+
+            %{--$("#teacher").select2('data',{id:'${r303Instance?.teacher?.id}', text:'${r303Instance?.teacher?.name+'|'+r303Instance?.teacher?.assignedNumber}'})--}%
+            %{--$("#teacher").select2('data',{id:${r303Instance?.teacher?.assignedNumber}, text:"${r303Instance?.teacher?.name+'|'+r303Instance?.teacher?.assignedNumber}"})--}%
+
+        });
+    </script>
 		<a href="#edit-r303" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>

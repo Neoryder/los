@@ -1,7 +1,6 @@
 <%@ page import="los.reports.R303" %>
 
 
-
 <div class="fieldcontain ${hasErrors(bean: r303Instance, field: 'dateFrom', 'error')} required">
 	<label for="dateFrom">
 		<g:message code="r303.dateFrom.label" default="Date From" />
@@ -23,7 +22,6 @@
 <div class="fieldcontain ${hasErrors(bean: r303Instance, field: 'entry', 'error')} ">
 	<label for="entry">
 		<g:message code="r303.entry.label" default="Entry" />
-		
 	</label>
 	
 <ul class="one-to-many">
@@ -52,8 +50,10 @@
 	</label>
 	%{--<g:select id="teacher" name="teacher.id" from="${los.Teacher.list()}" optionKey="id"  optionValue="assignedNumber" noSelection="${[null:'Please Choose a assigned number']}" required="" value="${r303Instance?.teacher?.id}" class="many-to-one"/>--}%
 
-    <select id="teacher" class="select2_dropdown bigdrop"></select>
-    <g:hiddenField name="teacher.id" id="teacherId" value="${r303Instance?.id}" ></g:hiddenField>
+    <select id="teacher" class="select2_dropdown bigdrop" >
+        <option value="${r303Instance?.teacher?.assignedNumber}" selected="selected"  >${r303Instance?.teacher?.name+'|'+r303Instance?.teacher?.assignedNumber}</option>
+    </select>
+    <g:hiddenField name="teacher.id" id="teacherId" value="${r303Instance?.teacher?.id}" ></g:hiddenField>
     %{--<input name="teacher.id" id="teacher" type="text" class="select2_dropdown bigdrop"  value="" />--}%
 </div>
 
