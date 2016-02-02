@@ -41,8 +41,81 @@
 
 
 
+        function formatResultStudent(results) {
+            console.log('formatResultStudent');
+            var markup = '<table><tr><td>';
+            markup += '<div>' + results.referenceNumber01 + '</div>';
+            markup += '<div class="autocomplete_id_below">' + results.firstName + '</div>';
+            markup += '<div class="autocomplete_id_below">' + results.middleName + '</div>';
+            markup += '<div class="autocomplete_id_below">' + results.lastName + '</div>';
+            markup += '<div class="autocomplete_id_below">' + results.husbandsLastName + '</div>';
+            markup += '<div class="autocomplete_id_below">' + results.lokal + '</div>';
+            markup += '</td></tr></table>';
+            console.log(markup)
+            return markup;
+        }
+
+        function formatSelectionStudent(result) {
+            console.log('formatSelectionStudent');
+            console.log(result);
+
+            if(result.referenceNumber01){
+                if(result.husbandsLastName){
+                    return result.referenceNumber01+"-"+result.firstName+"|"+result.middleName+"|"+result.lastName+"|"+result.husbandsLastName+"|"+result.lokal;
+                } else {
+                    return result.referenceNumber01+"-"+result.firstName+"|"+result.middleName+"|"+result.lastName+"|"+result.lokal;
+                }
+            } else {
+                return result.text;
+            }
+        }
+
+
+
         $(document).ready(function() {
             var pageSize = 20;
+
+
+            $("#student").select2({
+                ajax: {
+                    url: autoCompleteStudentUrl,
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            starts_with: params.term, // search term
+                            page: params.page
+                        };
+                    },
+                    processResults: function (data, params) {
+                        // parse the results into the format expected by Select2
+                        // since we are using custom formatting functions we do not need to
+                        // alter the remote JSON data, except to indicate that infinite
+                        // scrolling can be used
+                        params.page = params.page || 1;
+
+                        return {
+                            results: data.results,
+                            pagination: {
+                                more: (params.page * 30) < data.total
+                            }
+                        };
+                    },
+                    cache: true
+                },
+                escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+                minimumInputLength: 1,
+                dropdownCssClass: "bigdrop",
+                templateResult: formatResultStudent,
+                templateSelection: formatSelectionStudent
+            });
+
+            var $eventSelect = $("#student");
+            $eventSelect.on("change", function (e) {
+                $("#studentId").val($("#student").val())
+            });
+
+
 
 
             $("#r303").select2({
@@ -79,10 +152,12 @@
                 templateSelection: formatSelectionR303
             });
 
-            var $eventSelect = $("#teacher");
+            var $eventSelect = $("#r303");
             $eventSelect.on("change", function (e) {
-                $("#teacherId").val($("#teacher").val())
+                $("#r303Id").val($("#r303").val())
             });
+
+
 
         });
     </script>

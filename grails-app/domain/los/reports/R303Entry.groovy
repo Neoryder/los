@@ -18,6 +18,7 @@ class R303Entry {
 
 
     static constraints = {
+        student unique: ['r303']
         lessonMon max: 30
         lessonTue max: 30
         lessonWed max: 30
@@ -26,4 +27,5 @@ class R303Entry {
         lessonSat max: 30
         lessonSun max: 30
     }
+
 }

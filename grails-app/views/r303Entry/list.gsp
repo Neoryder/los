@@ -23,36 +23,46 @@
 			<table>
 				<thead>
 					<tr>
-					
-						<g:sortableColumn property="lessonFri" title="${message(code: 'r303Entry.lessonFri.label', default: 'Lesson Fri')}" />
-					
-						<g:sortableColumn property="lessonMon" title="${message(code: 'r303Entry.lessonMon.label', default: 'Lesson Mon')}" />
+
+                        <g:sortableColumn property="id" title="${message(code: 'r303Entry.id.label', default: 'view')}" />
+
+                        <g:sortableColumn property="lessonMon" title="${message(code: 'r303Entry.lessonMon.label', default: 'Lesson Mon')}" />
+
+                        <g:sortableColumn property="lessonTue" title="${message(code: 'r303Entry.lessonTue.label', default: 'Lesson Tue')}" />
+
+                        <g:sortableColumn property="lessonTue" title="${message(code: 'r303Entry.lessonTue.label', default: 'Lesson Wed')}" />
+
+                        <g:sortableColumn property="lessonThu" title="${message(code: 'r303Entry.lessonThu.label', default: 'Lesson Thu')}" />
+
+                        <g:sortableColumn property="lessonFri" title="${message(code: 'r303Entry.lessonFri.label', default: 'Lesson Fri')}" />
 					
 						<g:sortableColumn property="lessonSat" title="${message(code: 'r303Entry.lessonSat.label', default: 'Lesson Sat')}" />
 					
 						<g:sortableColumn property="lessonSun" title="${message(code: 'r303Entry.lessonSun.label', default: 'Lesson Sun')}" />
-					
-						<g:sortableColumn property="lessonThu" title="${message(code: 'r303Entry.lessonThu.label', default: 'Lesson Thu')}" />
-					
-						<g:sortableColumn property="lessonTue" title="${message(code: 'r303Entry.lessonTue.label', default: 'Lesson Tue')}" />
-					
+
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${r303EntryInstanceList}" status="i" var="r303EntryInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${r303EntryInstance.id}">${fieldValue(bean: r303EntryInstance, field: "lessonFri")}</g:link></td>
+						<td><g:link action="show" id="${r303EntryInstance.id}">${fieldValue(bean: r303EntryInstance, field: "r303")}</g:link></td>
 					
 						<td>${fieldValue(bean: r303EntryInstance, field: "lessonMon")}</td>
-					
+
+                        <td>${fieldValue(bean: r303EntryInstance, field: "lessonTue")}</td>
+
+                        <td>${fieldValue(bean: r303EntryInstance, field: "lessonWed")}</td>
+
+                        <td>${fieldValue(bean: r303EntryInstance, field: "lessonThu")}</td>
+
 						<td>${fieldValue(bean: r303EntryInstance, field: "lessonSat")}</td>
 					
 						<td>${fieldValue(bean: r303EntryInstance, field: "lessonSun")}</td>
 					
-						<td>${fieldValue(bean: r303EntryInstance, field: "lessonThu")}</td>
+
 					
-						<td>${fieldValue(bean: r303EntryInstance, field: "lessonTue")}</td>
+
 					
 					</tr>
 				</g:each>

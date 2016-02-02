@@ -18,7 +18,11 @@ class AutoCompleteController {
 
         temp.each{ laman ->
             resultsList << [id: laman.id,
-                            label: laman.buongPangalan,
+                            firstName: laman.firstName,
+                            middleName: laman.middleName,
+                            lastName: laman.lastName,
+                            husbandsLastName: laman.husbandsLastName,
+                            lokal: laman.lokal.lokal,
                             referenceNumber01: laman.referenceNumber01]
         }
 
