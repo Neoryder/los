@@ -2,6 +2,7 @@ import los.Distrito
 import los.Lokal
 import los.Teacher
 import los.Uri
+import los.WeekNumber
 
 class BootStrap {
 
@@ -2023,10 +2024,18 @@ class BootStrap {
             uriBL = new Uri(code: 'BL', description: 'Balik Pagsubok').save()
         }
 
+        Date dateFrom
+        Date dateTo
+        Integer year = 2016
+        Integer week = 1
         //Bootstrap WeekNo
         //TODO Fill this up
         Calendar cal = Calendar.getInstance()
         cal.set(Calendar.YEAR,2016)
+        cal.set(Calendar.HOUR,0)
+        cal.set(Calendar.MINUTE,0)
+        cal.set(Calendar.SECOND,0)
+        cal.set(Calendar.MILLISECOND,0)
         println '1'+ cal.getTime()
         cal.set(Calendar.DAY_OF_YEAR,1)
         println '2'+cal.getTime()
@@ -2035,31 +2044,85 @@ class BootStrap {
         println '3a'+cal.get(Calendar.WEEK_OF_YEAR)
         cal.set(Calendar.DAY_OF_WEEK,2)
         println '4'+cal.getTime()
+        dateTo = cal.getTime()
         cal.add(Calendar.DAY_OF_YEAR,6)
         println '5'+cal.getTime()
+        dateFrom = cal.getTime()
+        week = 1
+
+//        WeekNumber.deleteAll(WeekNumber.findAll())
+
+        Calendar calNewYear = Calendar.getInstance()
+        calNewYear.set(Calendar.HOUR,0)
+        calNewYear.set(Calendar.MINUTE,0)
+        calNewYear.set(Calendar.SECOND,0)
+        calNewYear.set(Calendar.MILLISECOND,0)
+        calNewYear.set(Calendar.MONTH,Calendar.DECEMBER)
+        calNewYear.set(Calendar.DAY_OF_MONTH,31)
+//        calNewYear.add(Calendar.YEAR,1)
+        println "calNewYear:"+calNewYear.getTime()
+        WeekNumber weekNo = null
+if(!WeekNumber.findAllByYearAndWeek(year,week)){
+
+    weekNo = new WeekNumber(
+            dateFrom: dateFrom,
+            dateTo: dateTo,
+            week: week,
+            year: year
+    ).save()
+
+    for (int i = 1; i <= 600; i++) {
+        println "calNewYear:"+calNewYear.getTime()
         cal.add(Calendar.DAY_OF_YEAR,1)
-        println '6'+cal.getTime()
+        println i+'From'+cal.getTime()
+        dateFrom = cal.getTime()
         cal.add(Calendar.DAY_OF_YEAR,6)
-        println '7'+cal.getTime()
-        println '7a'+cal.get(Calendar.WEEK_OF_YEAR)
+        println i+'To'+cal.getTime()
+        dateTo = cal.getTime()
+        if(calNewYear.getTime()<dateTo){
+            println "BBBB"
+            week=1
+            year++
+            println week
+            println year
+            weekNo = new WeekNumber(
+                    dateFrom: dateFrom,
+                    dateTo: dateTo,
+                    week: week,
+                    year: year
+            ).save()
+            calNewYear.add(Calendar.YEAR,1)
+            week++
+        } else  if(calNewYear.getTime()==dateTo) {
+            println "CCCC"
+            println week
+            println year
+            weekNo = new WeekNumber(
+                    dateFrom: dateFrom,
+                    dateTo: dateTo,
+                    week: week,
+                    year: year
+            ).save()
+            week=1
+            year++
+            calNewYear.add(Calendar.YEAR,1)
+        } else {
+            println "DDDD"
+            println week
+            println year
+            weekNo = new WeekNumber(
+                    dateFrom: dateFrom,
+                    dateTo: dateTo,
+                    week: week,
+                    year: year
+            ).save()
+            week++
+        }
 
 
-//        cal.set(Calendar.WEEK_OF_YEAR,2)
-//        println cal.getTime()
-//        cal.set(Calendar.DAY_OF_WEEK,3)
-//        println cal.getTime()
-//        println "AAAAAAAAAAAAAAAAAAAAAA:"+ cal.getWeeksInWeekYear()
-//        println cal.getFirstDayOfWeek()
-//        println cal.getMinimalDaysInFirstWeek()
-
-        Date dateFrom
-        Date dateTo
-        Integer week
-        Integer year
-
-        println cal.getWeekYear()
-
-
+        println "=================================="
+    }
+}
 
 
 

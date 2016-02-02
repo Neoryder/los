@@ -10,6 +10,6 @@ class WeekNumber {
     static constraints = {
         dateFrom unique: true
         dateTo unique: true
-        week unique: ['year','dateFrom','dateTo']
+        week unique: ['year']
     }
 }

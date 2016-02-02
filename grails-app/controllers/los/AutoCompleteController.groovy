@@ -6,11 +6,11 @@ class AutoCompleteController {
 
     def autoCompleteStudent() {
 
-        def name_startsWith = params.starts_with?.toUpperCase()
+        String name_startsWith = params.starts_with?.toUpperCase()
         def resultsList = []
         List<Student> temp = Student.findAll()
         if(name_startsWith){
-            temp = Student.findAllByReferenceNumber01Ilike(name_startsWith)
+            temp = Student.findAllByReferenceNumber01Ilike(name_startsWith+"%")
         }
 
 
