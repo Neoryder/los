@@ -26,15 +26,17 @@ class R303Controller {
         def r303Instance = new R303(params)
         println params.dateFrom
         SimpleDateFormat sdfmt1 = new SimpleDateFormat("MM/dd/yyyy");
-        Date dateFrom = sdfmt1.parse( params.dateFrom.toString() );
-        r303Instance.dateFrom =  dateFrom
-        Calendar calendar = Calendar.getInstance()
-        calendar.setTime(dateFrom)
-        calendar.add(Calendar.DAY_OF_YEAR,7)
-        calendar.set(Calendar.HOUR,0)
-        calendar.set(Calendar.MINUTE,0)
-        calendar.set(Calendar.MILLISECOND,0)
-        r303Instance.dateTo = calendar.getTime()
+        if (params.dateFrom?.trim()) {
+            Date dateFrom = sdfmt1.parse(params.dateFrom.toString());
+            r303Instance.dateFrom = dateFrom
+            Calendar calendar = Calendar.getInstance()
+            calendar.setTime(dateFrom)
+            calendar.add(Calendar.DAY_OF_YEAR, 6)
+            calendar.set(Calendar.HOUR, 0)
+            calendar.set(Calendar.MINUTE, 0)
+            calendar.set(Calendar.MILLISECOND, 0)
+            r303Instance.dateTo = calendar.getTime()
+        }
         println r303Instance.dateTo
         println r303Instance.clearErrors()
         println r303Instance.validate()
