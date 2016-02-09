@@ -5,6 +5,9 @@ import los.Teacher
 
 class R303 {
 
+    static constraints = {
+        dateTo nullable: true, blank: true
+    }
     Lokal lokal
     Integer weekNo
 //    @BindingFormat("MM/dd/yyyy")
@@ -15,9 +18,6 @@ class R303 {
     List entry
 
     static hasMany = [ entry :R303Entry ]
-
-    static constraints = {
-    }
 
     String toString(){
         return weekNo+"|"+teacher.name+"|"+lokal.lokal+"|"+dateFrom.format("MM/dd/yyyy")+"-"+dateTo.format("MM/dd/yyyy")
