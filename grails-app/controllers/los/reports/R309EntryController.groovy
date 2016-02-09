@@ -26,6 +26,10 @@ class R309EntryController {
             return
         }
 
+        //TODO Update Worship Service of Student
+
+
+
         flash.message = message(code: 'default.created.message', args: [message(code: 'r309Entry.label', default: 'R309Entry'), r309EntryInstance.id])
 //        redirect(action: "show", id: r309EntryInstance.id)
         redirect(action: 'create',params: ['r309.id':r309EntryInstance?.r309?.id])

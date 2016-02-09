@@ -4,6 +4,8 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class R303EntryController {
 
+    def r303Service
+
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
@@ -25,6 +27,9 @@ class R303EntryController {
             render(view: "create", model: [r303EntryInstance: r303EntryInstance])
             return
         }
+        //TODO Update Student lessons lesson01DateOfAttendance to lesson25DateOfAttendance
+
+        r303EntryInstance = r303Service.updateR303EntryInstance(r303EntryInstance)
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'r303Entry.label', default: 'R303Entry'), r303EntryInstance.id])
 //        redirect(action: "show", id: r303EntryInstance.id)
