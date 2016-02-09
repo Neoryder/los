@@ -1,5 +1,7 @@
 package los.reports
 
+import los.Student
+import los.WorshipServiceAttendance
 import org.springframework.dao.DataIntegrityViolationException
 
 class R309EntryController {
@@ -27,6 +29,10 @@ class R309EntryController {
         }
 
         //TODO Update Worship Service of Student
+
+        Student student =  r309EntryInstance.student
+        student.worshipServiceAttendanceList.add(new WorshipServiceAttendance(student: student,dateOfAttendance: r309EntryInstance.r309.date, status: 'active'))
+        student.save()
 
 
 

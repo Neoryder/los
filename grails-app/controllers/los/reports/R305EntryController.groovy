@@ -1,5 +1,7 @@
 package los.reports
 
+import los.DevotionalPrayer
+import los.Student
 import org.springframework.dao.DataIntegrityViolationException
 
 class R305EntryController {
@@ -26,7 +28,9 @@ class R305EntryController {
             return
         }
 
-        //TODO Update Devotional Prayer of Student
+        Student student =  r305EntryInstance.student
+        student.devotionalPrayerList.add(new DevotionalPrayer(student:student, dateOfAttendance: r305EntryInstance.r305.dateFrom))
+        student.save()
         flash.message = message(code: 'default.created.message', args: [message(code: 'r305Entry.label', default: 'R305Entry'), r305EntryInstance.id])
 //        redirect(action: "show", id: r305EntryInstance.id)
         redirect(action: 'create',params: ['r305.id':r305EntryInstance?.r305?.id])

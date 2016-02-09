@@ -6,6 +6,7 @@ class WorshipServiceAttendance {
         dateOfAttendance nullable: false
         type nullable: true
         status  nullable: false, inList: ['active','inactive']
+        lokal nullable: true
     }
 
     Date dateOfAttendance
