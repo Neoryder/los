@@ -33,7 +33,7 @@ class R303EntryController {
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'r303Entry.label', default: 'R303Entry'), r303EntryInstance.id])
 //        redirect(action: "show", id: r303EntryInstance.id)
-        redirect(action: 'create',params: ['r303.id':r303EntryInstance?.r303.id])
+        redirect(action: 'create',params: ['r303.id':r303EntryInstance?.r303?.id])
     }
 
     def show(Long id) {
