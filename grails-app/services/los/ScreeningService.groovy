@@ -88,7 +88,7 @@ class ScreeningService {
         return forFinalScreeningList
     }
 
-    def finalScreening(int week, int year) {
+    def finalScreening(Date dateProjected) {
 
 
         def studentLists = Student.findAllByType('sinusubok')
@@ -116,6 +116,10 @@ class ScreeningService {
             DateTime dateTime1 = new DateTime(dateStart);
             DateTime dateTime2 = new DateTime(dateNow);
 
+            DateTime dateTime3 = new DateTime(dateProjected)
+
+            int weeksPerfect = Weeks.weeksBetween(dateTime2, dateTime3).getWeeks()
+
             int weeks = Weeks.weeksBetween(dateTime1, dateTime2).getWeeks()
             println "weeks:"+weeks
             Integer perfectCount = weeks * 2
@@ -124,6 +128,8 @@ class ScreeningService {
             println "absent:"+absent
             wsCount  = perfectCount - (2*absent)
             println "wsCount:"+wsCount
+
+            wsCount = wsCount + (weeksPerfect*2)
 
 
             if( dpCount>=15 && wsCount >= 48 ){
