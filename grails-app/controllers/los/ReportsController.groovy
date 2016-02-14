@@ -7,7 +7,7 @@ class ReportsController {
     def screeningService
 
     def index() {
-        println "params.dateProjected:"+params.dateProjected
+        println "params.dateProjected:" + params.dateProjected
         if (params.dateProjected) {
             SimpleDateFormat sdfmt1 = new SimpleDateFormat("MM/dd/yyyy");
             if (params.dateFrom?.trim()) {
@@ -18,7 +18,8 @@ class ReportsController {
                 calendar.set(Calendar.HOUR, 0)
                 calendar.set(Calendar.MINUTE, 0)
                 calendar.set(Calendar.MILLISECOND, 0)
-            render screeningService.finalScreening(calendar.getTime())
+                render screeningService.finalScreening(calendar.getTime())
+            }
         } else {
             render screeningService.finalScreening()
         }
