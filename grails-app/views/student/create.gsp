@@ -5,26 +5,20 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'student.label', default: 'Student')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
-        <g:javascript library="jquery" plugin="jquery"/>
+        <r:require module="jquery"/>
+        <r:require module="jquery-ui-dev"/>
         <link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.base.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.classic.css')}" type="text/css">
         <script src="${resource(dir: 'js/jqwidgets', file: 'jqx-all.js')}" type="text/javascript"></script>
-        %{--<script src="${resource(dir: 'js/jqwidgets', file: 'jqxdatetimeinput.js')}" type="text/javascript"></script>--}%
-        %{--<script src="${resource(dir: 'js/jqwidgets', file: 'jqxcalendar.js')}" type="text/javascript"></script>--}%
         <script src="${resource(dir: 'js/jqwidgets/globalization', file: 'globalize.js')}" type="text/javascript"></script>
 
     </head>
 	<body>
-    %{--<script type="text/javascript">--}%
-        %{--$(document).ready(function () {--}%
-            %{--$("#birthDatePicker").jqxDateTimeInput({ width: '150px', height: '25px', formatString:'MM/dd/yyyy'});--}%
-            %{--$("#birthDatePicker").on('valueChanged', function (event)--}%
-            %{--{--}%
-%{--//                var jsDate = event.args.date;--}%
-                %{--$("#birthDate").val($("#birthDatePicker").val())--}%
-            %{--});--}%
-        %{--});--}%
-    %{--</script>--}%
+	<g:javascript src="autocomplete_common.js" />
+
+    <script type="text/javascript">
+        var autoCompleteTeacherUrl = '${g.createLink(controller:'autoComplete', action:'autoCompleteTeacher')}';
+    </script>
 
 		<a href="#create-student" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
