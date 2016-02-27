@@ -65,7 +65,7 @@
 				<g:if test="${r309Instance?.teacher}">
 				<li class="fieldcontain">
 					<span id="teacher-label" class="property-label"><g:message code="r309.teacher.label" default="Teacher" /></span>
-                    <span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${r309Instance?.teacher?.id}">${r309Instance?.teacher?.encodeAsHTML()}</g:link></span>
+                    <span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${r309Instance?.teacher?.id}">${r309Instance?.teacher}</g:link></span>
 				</li>
 				</g:if>
 			

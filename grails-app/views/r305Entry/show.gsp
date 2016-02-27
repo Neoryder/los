@@ -27,7 +27,7 @@
 				<li class="fieldcontain">
 					<span id="student-label" class="property-label"><g:message code="r305Entry.student.label" default="Student" /></span>
 					
-						<span class="property-value" aria-labelledby="student-label"><g:link controller="student" action="show" id="${r305EntryInstance?.student?.id}">${r305EntryInstance?.student?.buongPangalan?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="student-label"><g:link controller="student" action="show" id="${r305EntryInstance?.student?.id}">${r305EntryInstance?.student}</g:link></span>
 					
 				</li>
 				</g:if>

@@ -58,7 +58,7 @@
 				<g:if test="${r303Instance?.teacher}">
 				<li class="fieldcontain">
 					<span id="teacher-label" class="property-label"><g:message code="r303.teacher.label" default="Teacher" /></span>
-                    <span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${r303Instance?.teacher?.id}">${(r303Instance?.teacher?.name+' - '+r303Instance?.teacher?.assignedNumber).encodeAsHTML() }</g:link></span>
+                    <span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${r303Instance?.teacher?.id}">${r303Instance?.teacher}</g:link></span>
 				</li>
 				</g:if>
 			

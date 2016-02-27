@@ -20,7 +20,7 @@
         <span class="required-indicator">*</span>
     </label>
     <select id="student" class="select2_dropdown bigdrop" style="width: 600px" >
-        <option value="${r303EntryInstance?.student?.referenceNumber01}" selected="selected"  >${r303EntryInstance?.student?.referenceNumber01+'|'+r303EntryInstance?.student?.lastName + (r303EntryInstance?.student?.husbandsLastName?' - ' + r303EntryInstance.student.husbandsLastName:'') +', '+r303EntryInstance?.student?.firstName+' '+r303EntryInstance?.student?.middleName}</option>
+        <option value="${r303EntryInstance?.student?.referenceNumber01}" selected="selected"  >${r303EntryInstance?.student}</option>
     </select>
     <g:hiddenField name="student.id" id="studentId" value="${r303EntryInstance?.student?.id}" ></g:hiddenField>
 </div>

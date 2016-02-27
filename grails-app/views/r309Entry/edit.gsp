@@ -5,8 +5,18 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'r309Entry.label', default: 'R309Entry')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+		<r:require module="jquery"/>
+        <r:require module="jquery-ui-dev"/>
 	</head>
 	<body>
+	<g:javascript src="autocomplete_common.js" />
+	<script type="text/javascript">
+        //Auto Complete
+        var autoCompleteStudentUrl = '${g.createLink(controller:'autoComplete', action:'autoCompleteStudent')}';
+        var autoCompleteR303Url = '${g.createLink(controller:'autoComplete', action:'autoCompleteR303')}';
+        var autoCompleteR305Url = '${g.createLink(controller:'autoComplete', action:'autoCompleteR305')}';
+        var autoCompleteR309Url = '${g.createLink(controller:'autoComplete', action:'autoCompleteR309')}';
+    </script>
 		<a href="#edit-r309Entry" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>

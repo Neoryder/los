@@ -599,3 +599,8 @@ a.skip {
 input#firstName, input#middleName, input#lastName, input#husbandsLastName, input#spouseName {
     text-transform: uppercase;
 }
+
+.rTableCell, .rTableHead, div.fieldcontain { 
+	float: left;	
+	width: 50%;
+}

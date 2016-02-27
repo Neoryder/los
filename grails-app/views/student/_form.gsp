@@ -194,7 +194,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<select id="teacher" class="select2_dropdown bigdrop" >
-        <option value="${studentInstance?.teacher?.assignedNumber}" selected="selected"  >${studentInstance?.teacher?.name+'|'+studentInstance?.teacher?.assignedNumber}</option>
+        <option value="${studentInstance?.teacher?.assignedNumber}" selected="selected"  >${studentInstance?.teacher}</option>
     </select>
     <g:hiddenField name="teacher.id" id="teacherId" value="${studentInstance?.teacher?.id}" ></g:hiddenField>
 </div>
