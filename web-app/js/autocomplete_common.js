@@ -145,17 +145,14 @@ $(document).ready(function() {
     }
 
     function formatSelectionTeachers(result) {
-        console.log('formatSelectionTeachers'+result);
-        console.log (result.id)
-        console.log (result.text)
-        console.log (result.label)
-        console.log (result.assignedNumber)
+    	console.log('formatSelectionTeachers');
+        console.log(result);
         if(result.label){
             return result.label+"|"+result.assignedNumber;
-        } else if(result.id !== ''){
+        } else if(result.id){
             return result.text;
         } else {
-        	return "Please select a teacher";
+        	return 'Please select a teacher';
         }
     }
 
@@ -208,10 +205,10 @@ $(document).ready(function() {
 
         if(result.dateFrom){
             return result.dateFrom+"-"+result.dateTo+"|"+result.lokal+"|"+result.teacher;
-        } else if(result.text && result.text !== 'null|null|null|null') {
+        } else if(result.id) {
             return result.text;
         } else {
-        	return "Please select an R303";
+        	return 'Please select an R303';
         }
     }
 
@@ -247,8 +244,10 @@ $(document).ready(function() {
             } else {
                 return result.referenceNumber01+"-"+result.firstName+"|"+result.middleName+"|"+result.lastName+"|"+result.lokal;
             }
-        } else {
+        } else if(result.id){
             return result.text;
+        } else {
+        	return 'Please select a student';
         }
     }
 });

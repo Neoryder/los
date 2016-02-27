@@ -142,11 +142,11 @@ class Student {
 
     static transients = ['buongPangalan']
     String getBuongPangalan(){
-        return lastName+','+firstName+' '+ middleName + (husbandsLastName?"-"+husbandsLastName:'')
+        return lastName + (husbandsLastName?" - "+husbandsLastName:"") +", " + firstName + " " + middleName
     }
 
     String toString(){
-        return referenceNumber01+"|"+lastName+','+firstName+' '+ middleName + (husbandsLastName?"-"+husbandsLastName:'')
+        return referenceNumber01+"|"+lastName + (husbandsLastName?" - " + husbandsLastName:"") + ", "  + firstName +' '+ middleName
     }
 
 }
