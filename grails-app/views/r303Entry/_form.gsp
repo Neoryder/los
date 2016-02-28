@@ -8,7 +8,7 @@
     </label>
     %{--<g:select id="r303" name="r303.id" from="${los.reports.R303.list()}" optionKey="id" required="" value="${r303EntryInstance?.r303?.id}" class="many-to-one"/>--}%
     <select id="r303" class="select2_dropdown bigdrop" style="width: 800px" >
-        <option value="${r303EntryInstance?.student?.id}" selected="selected"  >${r303EntryInstance?.r303?.dateFrom?.format("MM/dd/yyyy")+'|'+r303EntryInstance?.r303?.dateTo?.format("MM/dd/yyyy")+'|'+r303EntryInstance?.r303?.lokal?.lokal+'|'+r303EntryInstance?.r303?.teacher?.name}</option>
+        <option value="${r303EntryInstance?.r303?.id}" selected="selected"  >${r303EntryInstance?.r303?.dateFrom?.format("MM/dd/yyyy")+'|'+r303EntryInstance?.r303?.dateTo?.format("MM/dd/yyyy")+'|'+r303EntryInstance?.r303?.lokal?.lokal+'|'+r303EntryInstance?.r303?.teacher?.name}</option>
     </select>
     <g:hiddenField name="r303.id" id="r303Id" value="${r303EntryInstance?.r303?.id}" ></g:hiddenField>
 
@@ -19,9 +19,8 @@
         <g:message code="r303Entry.student.label" default="Student" />
         <span class="required-indicator">*</span>
     </label>
-    %{--<g:select id="student" name="student.id" from="${los.Student.list()}" optionKey="id" required="" value="${r303EntryInstance?.student?.id}" class="many-to-one"/>--}%
     <select id="student" class="select2_dropdown bigdrop" style="width: 600px" >
-        <option value="${r303EntryInstance?.student?.id}" selected="selected"  >${r303EntryInstance?.student?.referenceNumber01+''+r303EntryInstance?.student?.lastName+''+r303EntryInstance?.student?.firstName+''+r303EntryInstance?.student?.middleName+ (r303EntryInstance?.student?.husbandsLastName)?'-'+r303EntryInstance?.student?.husbandsLastName:''}</option>
+        <option value="${r303EntryInstance?.student?.referenceNumber01}" selected="selected"  >${r303EntryInstance?.student}</option>
     </select>
     <g:hiddenField name="student.id" id="studentId" value="${r303EntryInstance?.student?.id}" ></g:hiddenField>
 </div>

@@ -595,3 +595,11 @@ a.skip {
 	left: -9999px;
 }
 .select2_dropdown {width: 300px; margin: 3px 0 3px 0; font-size: 13px;}
+input#firstName, input#middleName, input#lastName, input#husbandsLastName, input#spouseName {
+    text-transform: uppercase;
+}
+
+.rTableCell, .rTableHead, div.fieldcontain { 
+	float: left;	
+	width: 50%;
+}

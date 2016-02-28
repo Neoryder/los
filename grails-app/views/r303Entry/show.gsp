@@ -99,7 +99,7 @@
 				<li class="fieldcontain">
 					<span id="student-label" class="property-label"><g:message code="r303Entry.student.label" default="Student" /></span>
 					
-						<span class="property-value" aria-labelledby="student-label"><g:link controller="student" action="show" id="${r303EntryInstance?.student?.id}">${r303EntryInstance?.student?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="student-label"><g:link controller="student" action="show" id="${r303EntryInstance?.student?.id}">${r303EntryInstance?.student}</g:link></span>
 					
 				</li>
 				</g:if>

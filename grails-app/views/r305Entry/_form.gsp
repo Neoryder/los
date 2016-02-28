@@ -24,7 +24,7 @@
     </label>
     %{--<g:select id="student" name="student.id" from="${los.Student.list()}" optionKey="id" required="" value="${r305EntryInstance?.student?.id}" class="many-to-one"/>--}%
     <select id="student" class="select2_dropdown bigdrop" style="width: 600px" >
-        <option value="${r305EntryInstance?.student?.id}" selected="selected"  >${r305EntryInstance?.student?.referenceNumber01+''+r305EntryInstance?.student?.lastName+''+r305EntryInstance?.student?.firstName+''+r305EntryInstance?.student?.middleName+ (r305EntryInstance?.student?.husbandsLastName)?'-'+r305EntryInstance?.student?.husbandsLastName:''}</option>
+        <option value="${r305EntryInstance?.student?.referenceNumber01}" selected="selected"  >${r305EntryInstance?.student?.referenceNumber01+'|'+r305EntryInstance?.student?.lastName + (r305EntryInstance?.student?.husbandsLastName?' - ' + r305EntryInstance.student.husbandsLastName:'') +', '+r305EntryInstance?.student?.firstName+' '+r305EntryInstance?.student?.middleName}</option>
     </select>
     <g:hiddenField name="student.id" id="studentId" value="${r305EntryInstance?.student?.id}" ></g:hiddenField>
 </div>

@@ -66,10 +66,29 @@ class Student {
     }
 
     String firstName
+	void setFirstName( String s ){
+		firstName = s?.toUpperCase()
+	}
+	
     String middleName
+	void setMiddleName( String s ){
+		middleName = s?.toUpperCase()
+	}
+	
     String lastName
+	void setLastName( String s ){
+		lastName = s?.toUpperCase()
+	}
+	
     String husbandsLastName
+	void setHusbandsLastName( String s ){
+		husbandsLastName = s?.toUpperCase()
+	}
+	
     String spouseName
+	void setSpouseName( String s ){
+		spouseName = s?.toUpperCase()
+	}
 
 
 //    String lokal
@@ -142,11 +161,11 @@ class Student {
 
     static transients = ['buongPangalan']
     String getBuongPangalan(){
-        return lastName+','+firstName+' '+ middleName + (husbandsLastName?"-"+husbandsLastName:'')
+        return lastName + (husbandsLastName?" - "+husbandsLastName:"") +", " + firstName + " " + middleName
     }
 
     String toString(){
-        return referenceNumber01+"|"+lastName+','+firstName+' '+ middleName + (husbandsLastName?"-"+husbandsLastName:'')
+        return referenceNumber01+"|"+lastName + (husbandsLastName?" - " + husbandsLastName:"") + ", "  + firstName +' '+ middleName
     }
 
 }

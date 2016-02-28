@@ -51,7 +51,7 @@
 	%{--<g:select id="teacher" name="teacher.id" from="${los.Teacher.list()}" optionKey="id"  optionValue="assignedNumber" noSelection="${[null:'Please Choose a assigned number']}" required="" value="${r303Instance?.teacher?.id}" class="many-to-one"/>--}%
 
     <select id="teacher" class="select2_dropdown bigdrop" >
-        <option value="${r303Instance?.teacher?.assignedNumber}" selected="selected"  >${r303Instance?.teacher?.name+'|'+r303Instance?.teacher?.assignedNumber}</option>
+        <option value="${r303Instance?.teacher?.assignedNumber}" selected="selected"  >${r303Instance?.teacher}</option>
     </select>
     <g:hiddenField name="teacher.id" id="teacherId" value="${r303Instance?.teacher?.id}" ></g:hiddenField>
 </div>

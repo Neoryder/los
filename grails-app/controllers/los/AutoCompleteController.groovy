@@ -81,60 +81,56 @@ class AutoCompleteController {
         def jsonData = ['success':true, 'results':resultsList, 'total':resultsList.size()]
         render jsonData as JSON
     }
-
+	
     def autoCompleteR305() {
-
-        println params
-        Integer name_startsWith = new Integer(params.starts_with)
-        def resultsList = []
-
-        List<R305> temp = R305.findAll()
-        if(name_startsWith){
-
-            println("name_startsWith:"+name_startsWith)
-            temp = R303.findAllByWeekNo(name_startsWith)
-            println temp
-        }
-
-        temp.each{ laman ->
-            resultsList << [id: laman.id,
-                            dateFrom: laman.dateFrom.format("MM/dd/yyyy"),
-                            dateTo: laman.dateTo.format("MM/dd/yyyy"),
-                            lokal: laman.lokal.lokal,
-                            teacher: laman.teacher.name]
-        }
-
-        def jsonData = ['success':true, 'results':resultsList, 'total':resultsList.size()]
-        render jsonData as JSON
+    	
+    	println params
+    	Integer name_startsWith = new Integer(params.starts_with)
+    	def resultsList = []
+    			
+    			List<R305> temp = R305.findAll()
+    			if(name_startsWith){
+    				
+    				println("name_startsWith:"+name_startsWith)
+    				temp = R305.findAllByWeekNo(name_startsWith)
+    				println temp
+    			}
+    	
+    	temp.each{ laman ->
+    	resultsList << [id: laman.id,
+    	                dateFrom: laman.dateFrom.format("MM/dd/yyyy"),
+    	                dateTo: laman.dateTo.format("MM/dd/yyyy"),
+    	                lokal: laman.lokal.lokal,
+    	                teacher: laman.teacher.name]
+    	}
+    	
+    	def jsonData = ['success':true, 'results':resultsList, 'total':resultsList.size()]
+    			render jsonData as JSON
     }
-
+	
     def autoCompleteR309() {
-
-        println params
-        Integer name_startsWith = new Integer(params.starts_with)
-        def resultsList = []
-
-        List<R309> temp = R309.findAll()
-        if(name_startsWith){
-
-            println("name_startsWith:"+name_startsWith)
-            temp = R309.findAllByWeekNo(name_startsWith)
-            println temp
-        }
-
-        temp.each{ laman ->
-            resultsList << [id: laman.id,
-                            dateFrom: laman.dateFrom.format("MM/dd/yyyy"),
-                            dateTo: laman.dateTo.format("MM/dd/yyyy"),
-                            lokal: laman.lokal.lokal,
-                            teacher: laman.teacher.name]
-        }
-
-        def jsonData = ['success':true, 'results':resultsList, 'total':resultsList.size()]
-        render jsonData as JSON
+    	
+    	println params
+    	Integer name_startsWith = new Integer(params.starts_with)
+    	def resultsList = []
+    			
+    			List<R309> temp = R309.findAll()
+    			if(name_startsWith){
+    				
+    				println("name_startsWith:"+name_startsWith)
+    				temp = R309.findAllByWeekNo(name_startsWith)
+    				println temp
+    			}
+    	
+    	temp.each{ laman ->
+    	resultsList << [id: laman.id,
+    	                dateFrom: laman.dateFrom.format("MM/dd/yyyy"),
+    	                dateTo: laman.dateTo.format("MM/dd/yyyy"),
+    	                lokal: laman.lokal.lokal,
+    	                teacher: laman.teacher.name]
+    	}
+    	
+    	def jsonData = ['success':true, 'results':resultsList, 'total':resultsList.size()]
+    			render jsonData as JSON
     }
-
-
-
-
 }
