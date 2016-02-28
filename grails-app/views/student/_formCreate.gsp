@@ -44,12 +44,41 @@
 </div>
 
 <div class="row">
-    <div class="span12">
+    <div class="span6">
         <div class=" fieldcontain ${hasErrors(bean: studentInstance, field: 'spouseName', 'error')} ">
             <label for="spouseName">
                 <g:message code="student.spouseName.label" default="Spouse Name" />
             </label>
             <g:textField class="long-text12" name="spouseName" maxlength="100" value="${studentInstance?.spouseName}"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span2">
+            <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'gender', 'error')} ">
+                <label for="gender">
+                    <g:message code="student.gender.label" default="Gender" />
+                    <span class="required-indicator">*</span>
+                </label>
+                <g:select name="gender" from="${studentInstance.constraints.gender.inList}" value="${studentInstance?.gender}" valueMessagePrefix="student.gender" noSelection="['': '']"/>
+            </div>
+        </div>
+        <div class="span2">
+            <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'studentType', 'error')} ">
+                <label for="studentType">
+                    <g:message code="student.studentType.label" default="Student Type" />
+
+                </label>
+                <g:select name="studentType" from="${studentInstance.constraints.studentType.inList}" value="${studentInstance?.studentType}" valueMessagePrefix="student.studentType" noSelection="['': '']"/>
+            </div>
+        </div>
+        <div class="span2">
+            <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'civilStatus', 'error')} required">
+                <label for="civilStatus">
+                    <g:message code="student.civilStatus.label" default="Civil Status" />
+                    <span class="required-indicator">*</span>
+                </label>
+                <g:select name="civilStatus" noSelection="${['null':'Select One...']}" from="${studentInstance.constraints.civilStatus.inList}" required="" value="${studentInstance?.civilStatus}" valueMessagePrefix="student.civilStatus"/>
+            </div>
         </div>
     </div>
 </div>
@@ -122,38 +151,7 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="span3">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'gender', 'error')} ">
-            <label for="gender">
-                <g:message code="student.gender.label" default="Gender" />
-                <span class="required-indicator">*</span>
-            </label>
-            <g:select name="gender" from="${studentInstance.constraints.gender.inList}" value="${studentInstance?.gender}" valueMessagePrefix="student.gender" noSelection="['': '']"/>
-        </div>
-    </div>
-    <div class="span3">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'studentType', 'error')} ">
-            <label for="studentType">
-                <g:message code="student.studentType.label" default="Student Type" />
 
-            </label>
-            <g:select name="studentType" from="${studentInstance.constraints.studentType.inList}" value="${studentInstance?.studentType}" valueMessagePrefix="student.studentType" noSelection="['': '']"/>
-        </div>
-    </div>
-    <div class="span3">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'civilStatus', 'error')} required">
-            <label for="civilStatus">
-                <g:message code="student.civilStatus.label" default="Civil Status" />
-                <span class="required-indicator">*</span>
-            </label>
-            <g:select name="civilStatus" noSelection="${['null':'Select One...']}" from="${studentInstance.constraints.civilStatus.inList}" required="" value="${studentInstance?.civilStatus}" valueMessagePrefix="student.civilStatus"/>
-        </div>
-    </div>
-    <div class="span3">
-
-    </div>
-</div>
 
 <div class="row">
     <div class="span6">
@@ -194,7 +192,7 @@
                         <g:message code="student.nagakayAreaGroup.label" default="Nagakay Area Group" />
                         <span class="required-indicator">*</span>
                     </label>
-                    <g:textField class="short-text4" name="nagakayAreaGroup" maxlength="50" required="" value="${studentInstance?.nagakayAreaGroup}"/>
+                    <g:textField class="short200" name="nagakayAreaGroup" maxlength="50" required="" value="${studentInstance?.nagakayAreaGroup}"/>
                 </div>
             </div>
             <div class="span3">
@@ -217,7 +215,7 @@
                 <g:message code="student.address.label" default="Address" />
                 <span class="required-indicator">*</span>
             </label>
-            <g:textArea class="long-text12" name="address" cols="40" rows="5" maxlength="500" required="" value="${studentInstance?.address}"/>
+            <g:textArea class="long1000" name="address" cols="40" rows="5" maxlength="500" required="" value="${studentInstance?.address}"/>
         </div>
     </div>
 </div>
@@ -268,7 +266,7 @@
                 <g:message code="student.referenceNumber01.label" default="Reference Number01" />
                 <span class="required-indicator">*</span>
             </label>
-            <g:textField class="by3-text4"  name="referenceNumber01" required="" value="${studentInstance?.referenceNumber01}"/>
+            <g:textField class="short300"  name="referenceNumber01" required="" value="${studentInstance?.referenceNumber01}"/>
         </div>
     </div>
     <div class="span4">
@@ -277,7 +275,7 @@
                 <g:message code="student.referenceNumber02.label" default="Reference Number02" />
 
             </label>
-            <g:textField class="by3-text4" name="referenceNumber02" value="${studentInstance?.referenceNumber02}"/>
+            <g:textField class="short300" name="referenceNumber02" value="${studentInstance?.referenceNumber02}"/>
         </div>
     </div>
     <div class="span4">
@@ -286,7 +284,7 @@
                 <g:message code="student.referenceNumber03.label" default="Reference Number03" />
 
             </label>
-            <g:textField class="by3-text4" name="referenceNumber03" value="${studentInstance?.referenceNumber03}"/>
+            <g:textField class="short300" name="referenceNumber03" value="${studentInstance?.referenceNumber03}"/>
         </div>
     </div>
 </div>
