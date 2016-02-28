@@ -5,6 +5,9 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'r304.label', default: 'R304')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
+        <r:require module="jquery"/>
+        <r:require module="jquery-ui-dev"/>
+        <r:require modules="bootstrap"/>
 	</head>
 	<body>
 		<a href="#create-r304" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

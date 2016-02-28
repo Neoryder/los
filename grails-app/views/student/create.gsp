@@ -7,10 +7,12 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
         <r:require module="jquery"/>
         <r:require module="jquery-ui-dev"/>
+        <r:require modules="bootstrap"/>
         <link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.base.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'js/jqwidgets/styles', file: 'jqx.classic.css')}" type="text/css">
         <script src="${resource(dir: 'js/jqwidgets', file: 'jqx-all.js')}" type="text/javascript"></script>
         <script src="${resource(dir: 'js/jqwidgets/globalization', file: 'globalize.js')}" type="text/javascript"></script>
+
 
     </head>
 	<body>
@@ -20,7 +22,7 @@
         var autoCompleteTeacherUrl = '${g.createLink(controller:'autoComplete', action:'autoCompleteTeacher')}';
     </script>
 
-		<a href="#create-student" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		%{--<a href="#create-student" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>--}%
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>

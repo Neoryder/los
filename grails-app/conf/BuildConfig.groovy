@@ -70,6 +70,9 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.0.2"
         compile ':cache:1.1.1'
         compile "org.grails.plugins:jasper:1.11.0"
+        compile ":twitter-bootstrap:2.3.0"
+//        runtime "org.grails.plugins:twitter-bootstrap:2.3.1"
+//        runtime ":fields:1.3"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"

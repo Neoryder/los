@@ -6,6 +6,9 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'r305Entry.label', default: 'R305Entry')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
+        <r:require module="jquery"/>
+        <r:require module="jquery-ui-dev"/>
+        <r:require modules="bootstrap"/>
 	</head>
 	<body>
 		<a href="#list-r305Entry" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -20,28 +23,32 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-				<thead>
-					<tr>
-					
-						<th><g:message code="r305Entry.student.label" default="Student" /></th>
-					
-						<th><g:message code="r305Entry.r305.label" default="R305" /></th>
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${r305EntryInstanceList}" status="i" var="r305EntryInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${r305EntryInstance.id}">${fieldValue(bean: r305EntryInstance, field: "student")}</g:link></td>
-					
-						<td>${fieldValue(bean: r305EntryInstance, field: "r305")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                    <tr>
+
+                        <th><g:message code="r305Entry.student.label" default="Student" /></th>
+
+                        <th><g:message code="r305Entry.r305.label" default="R305" /></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <g:each in="${r305EntryInstanceList}" status="i" var="r305EntryInstance">
+                        <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+
+                            <td><g:link action="show" id="${r305EntryInstance.id}">${fieldValue(bean: r305EntryInstance, field: "student")}</g:link></td>
+
+                            <td>${fieldValue(bean: r305EntryInstance, field: "r305")}</td>
+
+                        </tr>
+                    </g:each>
+                    </tbody>
+                </table>
+            </div>
+
 			<div class="pagination">
 				<g:paginate total="${r305EntryInstanceTotal}" />
 			</div>

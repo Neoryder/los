@@ -5,6 +5,9 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'distrito.label', default: 'Distrito')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <r:require module="jquery"/>
+        <r:require module="jquery-ui-dev"/>
+        <r:require modules="bootstrap"/>
 	</head>
 	<body>
 		<a href="#edit-distrito" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

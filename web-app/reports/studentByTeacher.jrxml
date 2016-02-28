@@ -7,6 +7,17 @@
 	<field name="nagdoktrina" class="java.lang.String"/>
 	<field name="akay" class="java.lang.String"/>
 	<field name="nagakay" class="java.lang.String"/>
+	<group name="lokal">
+		<groupExpression><![CDATA[$F{lokal}]]></groupExpression>
+		<groupHeader>
+			<band height="22">
+				<textField>
+					<reportElement x="0" y="2" width="100" height="20" uuid="92c87809-a476-4050-b0c9-8ee3889a5aae"/>
+					<textFieldExpression><![CDATA[$F{lokal}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -25,31 +36,27 @@
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="23" splitType="Stretch">
+		<band height="22" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="2" width="100" height="20" uuid="e74a0183-bfc2-4986-b03b-51022e6b7fb2"/>
-				<text><![CDATA[lokal]]></text>
+				<text><![CDATA[Lokal]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="100" y="2" width="100" height="20" uuid="c3c424fc-6cc2-447f-bdc8-49548b688d38"/>
-				<text><![CDATA[nagdoktrina]]></text>
+				<text><![CDATA[Nag Doktrina]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="250" y="2" width="100" height="20" uuid="f93ea67c-b813-4b28-a6cb-28a9ea06ac7b"/>
-				<text><![CDATA[akay]]></text>
+				<text><![CDATA[Pangalan ng Doktrina]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="402" y="2" width="100" height="20" uuid="16b0698b-cb68-4d40-94e8-bcb0f8b14748"/>
-				<text><![CDATA[nagakay]]></text>
+				<text><![CDATA[Nagakay]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="23" splitType="Stretch">
-			<textField>
-				<reportElement x="0" y="0" width="100" height="20" uuid="37c4d52d-9c9b-493f-9f67-7e345b1278b7"/>
-				<textFieldExpression><![CDATA[$F{lokal}]]></textFieldExpression>
-			</textField>
+		<band height="20" splitType="Stretch">
 			<textField>
 				<reportElement x="100" y="0" width="100" height="20" uuid="c0836aca-6d8c-4ded-ae26-cda5e2ff0e32"/>
 				<textFieldExpression><![CDATA[$F{nagdoktrina}]]></textFieldExpression>

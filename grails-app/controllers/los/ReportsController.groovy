@@ -40,7 +40,7 @@ class ReportsController {
 
         def studentList = Student.findAllByStatus('active')
         def data = []
-        studentList.each {
+        studentList.sort{it?.lokal}.each {
             data << [
                     'lokal':it?.lokal?.lokal,
                     'nagdoktrina':it?.teacher?.name,
@@ -69,5 +69,16 @@ class ReportsController {
         response.characterEncoding = 'UTF-8'
         response.outputStream << reportDef.contentStream.toByteArray()
 
+    }
+
+    def showR302(Long id){
+        def studentInstance = Student.get(id)
+        if (!studentInstance) {
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'student.label', default: 'Student'), id])
+            redirect(action: "list")
+            return
+        }
+
+        [studentInstance: studentInstance]
     }
 }

@@ -6,6 +6,9 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'r303Entry.label', default: 'R303Entry')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
+        <r:require module="jquery"/>
+        <r:require module="jquery-ui-dev"/>
+        <r:require modules="bootstrap"/>
 	</head>
 	<body>
 		<a href="#list-r303Entry" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -20,9 +23,12 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-				<thead>
-					<tr>
+
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                    <tr>
 
                         <g:sortableColumn property="id" title="${message(code: 'r303Entry.id.label', default: 'view')}" />
 
@@ -35,39 +41,41 @@
                         <g:sortableColumn property="lessonThu" title="${message(code: 'r303Entry.lessonThu.label', default: 'Lesson Thu')}" />
 
                         <g:sortableColumn property="lessonFri" title="${message(code: 'r303Entry.lessonFri.label', default: 'Lesson Fri')}" />
-					
-						<g:sortableColumn property="lessonSat" title="${message(code: 'r303Entry.lessonSat.label', default: 'Lesson Sat')}" />
-					
-						<g:sortableColumn property="lessonSun" title="${message(code: 'r303Entry.lessonSun.label', default: 'Lesson Sun')}" />
 
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${r303EntryInstanceList}" status="i" var="r303EntryInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${r303EntryInstance.id}">${fieldValue(bean: r303EntryInstance, field: "r303")}</g:link></td>
-					
-						<td>${fieldValue(bean: r303EntryInstance, field: "lessonMon")}</td>
+                        <g:sortableColumn property="lessonSat" title="${message(code: 'r303Entry.lessonSat.label', default: 'Lesson Sat')}" />
 
-                        <td>${fieldValue(bean: r303EntryInstance, field: "lessonTue")}</td>
+                        <g:sortableColumn property="lessonSun" title="${message(code: 'r303Entry.lessonSun.label', default: 'Lesson Sun')}" />
 
-                        <td>${fieldValue(bean: r303EntryInstance, field: "lessonWed")}</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <g:each in="${r303EntryInstanceList}" status="i" var="r303EntryInstance">
+                        <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-                        <td>${fieldValue(bean: r303EntryInstance, field: "lessonThu")}</td>
+                            <td><g:link action="show" id="${r303EntryInstance.id}">${fieldValue(bean: r303EntryInstance, field: "r303")}</g:link></td>
 
-						<td>${fieldValue(bean: r303EntryInstance, field: "lessonSat")}</td>
-					
-						<td>${fieldValue(bean: r303EntryInstance, field: "lessonSun")}</td>
-					
+                            <td>${fieldValue(bean: r303EntryInstance, field: "lessonMon")}</td>
 
-					
+                            <td>${fieldValue(bean: r303EntryInstance, field: "lessonTue")}</td>
 
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
+                            <td>${fieldValue(bean: r303EntryInstance, field: "lessonWed")}</td>
+
+                            <td>${fieldValue(bean: r303EntryInstance, field: "lessonThu")}</td>
+
+                            <td>${fieldValue(bean: r303EntryInstance, field: "lessonSat")}</td>
+
+                            <td>${fieldValue(bean: r303EntryInstance, field: "lessonSun")}</td>
+
+
+
+
+
+                        </tr>
+                    </g:each>
+                    </tbody>
+                </table>
+            </div>
+
 			<div class="pagination">
 				<g:paginate total="${r303EntryInstanceTotal}" />
 			</div>

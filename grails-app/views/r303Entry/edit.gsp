@@ -5,8 +5,9 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'r303Entry.label', default: 'R303Entry')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
-		<r:require module="jquery"/>
+        <r:require module="jquery"/>
         <r:require module="jquery-ui-dev"/>
+        <r:require modules="bootstrap"/>
 	</head>
 	<body>
 	<g:javascript src="autocomplete_common.js" />

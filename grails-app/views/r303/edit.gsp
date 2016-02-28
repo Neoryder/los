@@ -7,6 +7,7 @@
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
         <r:require module="jquery"/>
         <r:require module="jquery-ui-dev"/>
+        <r:require modules="bootstrap"/>
 	</head>
 	<body>
 	<g:javascript src="autocomplete_common.js" />

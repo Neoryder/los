@@ -10,6 +10,7 @@
         <script src="${resource(dir: 'js/jqwidgets', file: 'jqx-all.js')}" type="text/javascript"></script>
         <r:require module="jquery"/>
         <r:require module="jquery-ui-dev"/>
+        <r:require modules="bootstrap"/>
 
         <script type="text/javascript">
             $(document).ready(function () {
