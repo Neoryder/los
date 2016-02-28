@@ -198,8 +198,23 @@
     </select>
     <g:hiddenField name="teacher.id" id="teacherId" value="${studentInstance?.teacher?.id}" ></g:hiddenField>
 </div>
-	%{--<g:select id="teacher" name="teacher.id" noSelection="${['null':'Select One...']}" from="${los.Teacher.list()}" optionKey="id" optionValue="name" required="" value="${studentInstance?.teacher?.id}" class="many-to-one"/>--}%
-<g:if test="${!params.create}">
+
+<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'type', 'error')} ">
+    <label for="type">
+        <g:message code="student.type.label" default="Type" />
+
+    </label>
+    <g:select name="type" noSelection="${['null':'Select One...']}" from="${studentInstance.constraints.type.inList}" value="${studentInstance?.type}" valueMessagePrefix="student.type" noSelection="['': '']"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'status', 'error')} ">
+    <label for="status">
+        <g:message code="student.status.label" default="Status" />
+
+    </label>
+    <g:select name="status" from="${studentInstance.constraints.status.inList}" value="${studentInstance?.status}" valueMessagePrefix="student.status" noSelection="['': '']"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson01DateOfAttendance', 'error')} ">
 	<label for="lesson01DateOfAttendance">
 		<g:message code="student.lesson01DateOfAttendance.label" default="Lesson01 Date Of Attendance" />
@@ -403,7 +418,7 @@
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson26DateOfAttendance', 'error')} ">
 	<label for="lesson26DateOfAttendance">
 		<g:message code="student.lesson26DateOfAttendance.label" default="Lesson26 Date Of Attendance" />
-		
+
 	</label>
 	<g:datePicker name="lesson26DateOfAttendance" precision="day"  value="${studentInstance?.lesson26DateOfAttendance}" default="none" noSelection="['': '']" />
 </div>
@@ -411,7 +426,7 @@
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson27DateOfAttendance', 'error')} ">
 	<label for="lesson27DateOfAttendance">
 		<g:message code="student.lesson27DateOfAttendance.label" default="Lesson27 Date Of Attendance" />
-		
+
 	</label>
 	<g:datePicker name="lesson27DateOfAttendance" precision="day"  value="${studentInstance?.lesson27DateOfAttendance}" default="none" noSelection="['': '']" />
 </div>
@@ -419,25 +434,9 @@
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson28DateOfAttendance', 'error')} ">
 	<label for="lesson28DateOfAttendance">
 		<g:message code="student.lesson28DateOfAttendance.label" default="Lesson28 Date Of Attendance" />
-		
+
 	</label>
 	<g:datePicker name="lesson28DateOfAttendance" precision="day"  value="${studentInstance?.lesson28DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'type', 'error')} ">
-	<label for="type">
-		<g:message code="student.type.label" default="Type" />
-		
-	</label>
-	<g:select name="type" noSelection="${['null':'Select One...']}" from="${studentInstance.constraints.type.inList}" value="${studentInstance?.type}" valueMessagePrefix="student.type" noSelection="['': '']"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'status', 'error')} ">
-	<label for="status">
-		<g:message code="student.status.label" default="Status" />
-		
-	</label>
-	<g:select name="status" from="${studentInstance.constraints.status.inList}" value="${studentInstance?.status}" valueMessagePrefix="student.status" noSelection="['': '']"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'devotionalPrayerList', 'error')} ">
@@ -473,5 +472,3 @@
 </ul>
 
 </div>
-
-</g:if>
