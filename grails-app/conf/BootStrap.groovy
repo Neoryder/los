@@ -87,8 +87,8 @@ class BootStrap {
         if(!Lokal.findByLokal('Karunungan')){
             new Lokal(distrito:mms, lokal:'Karunungan', lcode: '019').save()
         }
-        if(!Lokal.findByLokal('Las Pi�as')){
-            new Lokal(distrito:mms, lokal:'Las Pi�as', lcode: '020').save()
+        if(!Lokal.findByLokal('Las Pinas')){
+            new Lokal(distrito:mms, lokal:'Las Pinas', lcode: '020').save()
         }
         if(!Lokal.findByLokal('Lower Bicutan')){
             new Lokal(distrito:mms, lokal:'Lower Bicutan', lcode: '021').save()
@@ -123,8 +123,8 @@ class BootStrap {
         if(!Lokal.findByLokal('Pamplona')){
             new Lokal(distrito:mms, lokal:'Pamplona', lcode: '031').save()
         }
-        if(!Lokal.findByLokal('Para�aque')){
-            new Lokal(distrito:mms, lokal:'Para�aque', lcode: '032').save()
+        if(!Lokal.findByLokal('Paranaque')){
+            new Lokal(distrito:mms, lokal:'Paranaque', lcode: '032').save()
         }
         if(!Lokal.findByLokal('Pasay')){
             new Lokal(distrito:mms, lokal:'Pasay', lcode: '033').save()

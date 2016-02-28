@@ -11,7 +11,6 @@
         <r:require modules="bootstrap"/>
 	</head>
 	<body>
-		<a href="#show-distrito" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
@@ -24,7 +23,7 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="property-list distrito">
+			<ul class="property-list distrito">
 			
 				<g:if test="${distritoInstance?.distrito}">
 				<li class="fieldcontain">
@@ -47,15 +46,17 @@
 				<g:if test="${distritoInstance?.lokal}">
 				<li class="fieldcontain">
 					<span id="lokal-label" class="property-label"><g:message code="distrito.lokal.label" default="Lokal" /></span>
-					
-						<g:each in="${distritoInstance.lokal.sort { it.id }}" var="l">
-						<span class="property-value" aria-labelledby="lokal-label"><g:link controller="lokal" action="show" id="${l.id}">${l?.lokal?.encodeAsHTML()}</g:link></span>
-						</g:each>
+					    <ul>
+
+                            <g:each in="${distritoInstance.lokal.sort { it.id }}" var="l">
+                                <li><span class="property-value" aria-labelledby="lokal-label"><g:link controller="lokal" action="show" id="${l.id}">${l?.lokal?.encodeAsHTML()}</g:link></span></li>
+                            </g:each>
+                        </ul>
 					
 				</li>
 				</g:if>
 			
-			</ol>
+			</ul>
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${distritoInstance?.id}" />

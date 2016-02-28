@@ -23,6 +23,6 @@
 		<g:message code="lokal.distrito.label" default="Distrito" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="distrito" name="distrito.id" from="${los.Distrito.list()}" optionKey="id" required="" value="${lokalInstance?.distrito?.id}" class="many-to-one"/>
+	<g:select id="distrito" name="distrito.id" from="${los.Distrito.list()}" optionKey="id" optionValue="distrito" required="" value="${lokalInstance?.distrito?.id}" class="many-to-one"/>
 </div>
 

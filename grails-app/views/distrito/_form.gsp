@@ -1,7 +1,6 @@
 <%@ page import="los.Distrito" %>
 
 
-
 <div class="fieldcontain ${hasErrors(bean: distritoInstance, field: 'distrito', 'error')} ">
 	<label for="distrito">
 		<g:message code="distrito.distrito.label" default="Distrito" />
