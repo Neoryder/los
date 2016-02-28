@@ -27,7 +27,6 @@ class R303EntryController {
             render(view: "create", model: [r303EntryInstance: r303EntryInstance])
             return
         }
-        //TODO Update Student lessons lesson01DateOfAttendance to lesson25DateOfAttendance
 
         r303EntryInstance = r303Service.updateR303EntryInstance(r303EntryInstance)
 

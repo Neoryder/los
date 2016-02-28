@@ -46,7 +46,7 @@ class R303Controller {
             }
             render(view: "create", model: [r303Instance: r303Instance])
             return
-        }
+        }\
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'r303.label', default: 'R303'), r303Instance.id])
         redirect(action: "show", id: r303Instance.id)

@@ -2,6 +2,8 @@ package los
 
 import grails.converters.JSON
 import los.reports.R303
+import los.reports.R305
+import los.reports.R309
 
 class AutoCompleteController {
 
@@ -39,7 +41,7 @@ class AutoCompleteController {
         List<Teacher> temp = Teacher.findAll()
         if(name_startsWith){
             println("name_startsWith:"+name_startsWith)
-            temp = Teacher.findAllByAssignedNumberIlike(name_startsWith+"%")
+            temp = Teacher.findAllByAssignedNumberIlikeOrNameIlike(name_startsWith+"%","%"+name_startsWith+"%")
 //            temp = Teacher.findAllByAssignedNumberIlike("070%")
             println temp
         }
@@ -79,4 +81,60 @@ class AutoCompleteController {
         def jsonData = ['success':true, 'results':resultsList, 'total':resultsList.size()]
         render jsonData as JSON
     }
+
+    def autoCompleteR305() {
+
+        println params
+        Integer name_startsWith = new Integer(params.starts_with)
+        def resultsList = []
+
+        List<R305> temp = R305.findAll()
+        if(name_startsWith){
+
+            println("name_startsWith:"+name_startsWith)
+            temp = R303.findAllByWeekNo(name_startsWith)
+            println temp
+        }
+
+        temp.each{ laman ->
+            resultsList << [id: laman.id,
+                            dateFrom: laman.dateFrom.format("MM/dd/yyyy"),
+                            dateTo: laman.dateTo.format("MM/dd/yyyy"),
+                            lokal: laman.lokal.lokal,
+                            teacher: laman.teacher.name]
+        }
+
+        def jsonData = ['success':true, 'results':resultsList, 'total':resultsList.size()]
+        render jsonData as JSON
+    }
+
+    def autoCompleteR309() {
+
+        println params
+        Integer name_startsWith = new Integer(params.starts_with)
+        def resultsList = []
+
+        List<R309> temp = R309.findAll()
+        if(name_startsWith){
+
+            println("name_startsWith:"+name_startsWith)
+            temp = R309.findAllByWeekNo(name_startsWith)
+            println temp
+        }
+
+        temp.each{ laman ->
+            resultsList << [id: laman.id,
+                            dateFrom: laman.dateFrom.format("MM/dd/yyyy"),
+                            dateTo: laman.dateTo.format("MM/dd/yyyy"),
+                            lokal: laman.lokal.lokal,
+                            teacher: laman.teacher.name]
+        }
+
+        def jsonData = ['success':true, 'results':resultsList, 'total':resultsList.size()]
+        render jsonData as JSON
+    }
+
+
+
+
 }

@@ -95,7 +95,7 @@
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'gender', 'error')} ">
 	<label for="gender">
 		<g:message code="student.gender.label" default="Gender" />
-		
+        <span class="required-indicator">*</span>
 	</label>
 	<g:select name="gender" from="${studentInstance.constraints.gender.inList}" value="${studentInstance?.gender}" valueMessagePrefix="student.gender" noSelection="['': '']"/>
 </div>
@@ -193,280 +193,291 @@
 		<g:message code="student.teacher.label" default="Teacher" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="teacher" name="teacher.id" noSelection="${['null':'Select One...']}" from="${los.Teacher.list()}" optionKey="id" optionValue="name" required="" value="${studentInstance?.teacher?.id}" class="many-to-one"/>
-</div>
+	%{--<g:select id="teacher" name="teacher.id" noSelection="${['null':'Select One...']}" from="${los.Teacher.list()}" optionKey="id" optionValue="name" required="" value="${studentInstance?.teacher?.id}" class="many-to-one"/>--}%
 
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson01DateOfAttendance', 'error')} ">
-	<label for="lesson01DateOfAttendance">
-		<g:message code="student.lesson01DateOfAttendance.label" default="Lesson01 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson01DateOfAttendance" precision="day"  value="${studentInstance?.lesson01DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson02DateOfAttendance', 'error')} ">
-	<label for="lesson02DateOfAttendance">
-		<g:message code="student.lesson02DateOfAttendance.label" default="Lesson02 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson02DateOfAttendance" precision="day"  value="${studentInstance?.lesson02DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson03DateOfAttendance', 'error')} ">
-	<label for="lesson03DateOfAttendance">
-		<g:message code="student.lesson03DateOfAttendance.label" default="Lesson03 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson03DateOfAttendance" precision="day"  value="${studentInstance?.lesson03DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson04DateOfAttendance', 'error')} ">
-	<label for="lesson04DateOfAttendance">
-		<g:message code="student.lesson04DateOfAttendance.label" default="Lesson04 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson04DateOfAttendance" precision="day"  value="${studentInstance?.lesson04DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson05DateOfAttendance', 'error')} ">
-	<label for="lesson05DateOfAttendance">
-		<g:message code="student.lesson05DateOfAttendance.label" default="Lesson05 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson05DateOfAttendance" precision="day"  value="${studentInstance?.lesson05DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson06DateOfAttendance', 'error')} ">
-	<label for="lesson06DateOfAttendance">
-		<g:message code="student.lesson06DateOfAttendance.label" default="Lesson06 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson06DateOfAttendance" precision="day"  value="${studentInstance?.lesson06DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson07DateOfAttendance', 'error')} ">
-	<label for="lesson07DateOfAttendance">
-		<g:message code="student.lesson07DateOfAttendance.label" default="Lesson07 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson07DateOfAttendance" precision="day"  value="${studentInstance?.lesson07DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson08DateOfAttendance', 'error')} ">
-	<label for="lesson08DateOfAttendance">
-		<g:message code="student.lesson08DateOfAttendance.label" default="Lesson08 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson08DateOfAttendance" precision="day"  value="${studentInstance?.lesson08DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson09DateOfAttendance', 'error')} ">
-	<label for="lesson09DateOfAttendance">
-		<g:message code="student.lesson09DateOfAttendance.label" default="Lesson09 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson09DateOfAttendance" precision="day"  value="${studentInstance?.lesson09DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson10DateOfAttendance', 'error')} ">
-	<label for="lesson10DateOfAttendance">
-		<g:message code="student.lesson10DateOfAttendance.label" default="Lesson10 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson10DateOfAttendance" precision="day"  value="${studentInstance?.lesson10DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson11DateOfAttendance', 'error')} ">
-	<label for="lesson11DateOfAttendance">
-		<g:message code="student.lesson11DateOfAttendance.label" default="Lesson11 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson11DateOfAttendance" precision="day"  value="${studentInstance?.lesson11DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson12DateOfAttendance', 'error')} ">
-	<label for="lesson12DateOfAttendance">
-		<g:message code="student.lesson12DateOfAttendance.label" default="Lesson12 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson12DateOfAttendance" precision="day"  value="${studentInstance?.lesson12DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson13DateOfAttendance', 'error')} ">
-	<label for="lesson13DateOfAttendance">
-		<g:message code="student.lesson13DateOfAttendance.label" default="Lesson13 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson13DateOfAttendance" precision="day"  value="${studentInstance?.lesson13DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson14DateOfAttendance', 'error')} ">
-	<label for="lesson14DateOfAttendance">
-		<g:message code="student.lesson14DateOfAttendance.label" default="Lesson14 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson14DateOfAttendance" precision="day"  value="${studentInstance?.lesson14DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson15DateOfAttendance', 'error')} ">
-	<label for="lesson15DateOfAttendance">
-		<g:message code="student.lesson15DateOfAttendance.label" default="Lesson15 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson15DateOfAttendance" precision="day"  value="${studentInstance?.lesson15DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson16DateOfAttendance', 'error')} ">
-	<label for="lesson16DateOfAttendance">
-		<g:message code="student.lesson16DateOfAttendance.label" default="Lesson16 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson16DateOfAttendance" precision="day"  value="${studentInstance?.lesson16DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson17DateOfAttendance', 'error')} ">
-	<label for="lesson17DateOfAttendance">
-		<g:message code="student.lesson17DateOfAttendance.label" default="Lesson17 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson17DateOfAttendance" precision="day"  value="${studentInstance?.lesson17DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson18DateOfAttendance', 'error')} ">
-	<label for="lesson18DateOfAttendance">
-		<g:message code="student.lesson18DateOfAttendance.label" default="Lesson18 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson18DateOfAttendance" precision="day"  value="${studentInstance?.lesson18DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson19DateOfAttendance', 'error')} ">
-	<label for="lesson19DateOfAttendance">
-		<g:message code="student.lesson19DateOfAttendance.label" default="Lesson19 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson19DateOfAttendance" precision="day"  value="${studentInstance?.lesson19DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson20DateOfAttendance', 'error')} ">
-	<label for="lesson20DateOfAttendance">
-		<g:message code="student.lesson20DateOfAttendance.label" default="Lesson20 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson20DateOfAttendance" precision="day"  value="${studentInstance?.lesson20DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson21DateOfAttendance', 'error')} ">
-	<label for="lesson21DateOfAttendance">
-		<g:message code="student.lesson21DateOfAttendance.label" default="Lesson21 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson21DateOfAttendance" precision="day"  value="${studentInstance?.lesson21DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson22DateOfAttendance', 'error')} ">
-	<label for="lesson22DateOfAttendance">
-		<g:message code="student.lesson22DateOfAttendance.label" default="Lesson22 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson22DateOfAttendance" precision="day"  value="${studentInstance?.lesson22DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson23DateOfAttendance', 'error')} ">
-	<label for="lesson23DateOfAttendance">
-		<g:message code="student.lesson23DateOfAttendance.label" default="Lesson23 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson23DateOfAttendance" precision="day"  value="${studentInstance?.lesson23DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson24DateOfAttendance', 'error')} ">
-	<label for="lesson24DateOfAttendance">
-		<g:message code="student.lesson24DateOfAttendance.label" default="Lesson24 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson24DateOfAttendance" precision="day"  value="${studentInstance?.lesson24DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson25DateOfAttendance', 'error')} ">
-	<label for="lesson25DateOfAttendance">
-		<g:message code="student.lesson25DateOfAttendance.label" default="Lesson25 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson25DateOfAttendance" precision="day"  value="${studentInstance?.lesson25DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson26DateOfAttendance', 'error')} ">
-	<label for="lesson26DateOfAttendance">
-		<g:message code="student.lesson26DateOfAttendance.label" default="Lesson26 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson26DateOfAttendance" precision="day"  value="${studentInstance?.lesson26DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson27DateOfAttendance', 'error')} ">
-	<label for="lesson27DateOfAttendance">
-		<g:message code="student.lesson27DateOfAttendance.label" default="Lesson27 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson27DateOfAttendance" precision="day"  value="${studentInstance?.lesson27DateOfAttendance}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson28DateOfAttendance', 'error')} ">
-	<label for="lesson28DateOfAttendance">
-		<g:message code="student.lesson28DateOfAttendance.label" default="Lesson28 Date Of Attendance" />
-		
-	</label>
-	<g:datePicker name="lesson28DateOfAttendance" precision="day"  value="${studentInstance?.lesson28DateOfAttendance}" default="none" noSelection="['': '']" />
+    <select id="teacher" class="select2_dropdown bigdrop" >
+        <option value="${studentInstance?.teacher?.assignedNumber}" selected="selected"  >${studentInstance?.teacher?.name+'|'+studentInstance?.teacher?.assignedNumber}</option>
+    </select>
+    <g:hiddenField name="teacher.id" id="teacherId" value="${r303Instance?.teacher?.id}" ></g:hiddenField>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'type', 'error')} ">
-	<label for="type">
-		<g:message code="student.type.label" default="Type" />
-		
-	</label>
-	<g:select name="type" noSelection="${['null':'Select One...']}" from="${studentInstance.constraints.type.inList}" value="${studentInstance?.type}" valueMessagePrefix="student.type" noSelection="['': '']"/>
+    <label for="type">
+        <g:message code="student.type.label" default="Type" />
+
+    </label>
+    <g:select name="type" noSelection="${['null':'Select One...']}" from="${studentInstance.constraints.type.inList}" value="${studentInstance?.type}" valueMessagePrefix="student.type" noSelection="['': '']"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'status', 'error')} ">
-	<label for="status">
-		<g:message code="student.status.label" default="Status" />
-		
-	</label>
-	<g:select name="status" from="${studentInstance.constraints.status.inList}" value="${studentInstance?.status}" valueMessagePrefix="student.status" noSelection="['': '']"/>
+    <label for="status">
+        <g:message code="student.status.label" default="Status" />
+
+    </label>
+    <g:select name="status" from="${studentInstance.constraints.status.inList}" value="${studentInstance?.status}" valueMessagePrefix="student.status" noSelection="['': '']"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'devotionalPrayerList', 'error')} ">
-	<label for="devotionalPrayerList">
-		<g:message code="student.devotionalPrayerList.label" default="Devotional Prayer List" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${studentInstance?.devotionalPrayerList?}" var="d">
-    <li><g:link controller="devotionalPrayer" action="show" id="${d.id}">${d?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="devotionalPrayer" action="create" params="['student.id': studentInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'devotionalPrayer.label', default: 'DevotionalPrayer')])}</g:link>
-</li>
-</ul>
+<g:if test="${!params.create}">
 
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'worshipServiceAttendanceList', 'error')} ">
-	<label for="worshipServiceAttendanceList">
-		<g:message code="student.worshipServiceAttendanceList.label" default="Worship Service Attendance List" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${studentInstance?.worshipServiceAttendanceList?}" var="w">
-    <li><g:link controller="worshipServiceAttendance" action="show" id="${w.id}">${w?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="worshipServiceAttendance" action="create" params="['student.id': studentInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'worshipServiceAttendance.label', default: 'WorshipServiceAttendance')])}</g:link>
-</li>
-</ul>
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson01DateOfAttendance', 'error')} ">
+        <label for="lesson01DateOfAttendance">
+            <g:message code="student.lesson01DateOfAttendance.label" default="Lesson01 Date Of Attendance" />
 
-</div>
+        </label>
+        <g:datePicker name="lesson01DateOfAttendance" precision="day"  value="${studentInstance?.lesson01DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
 
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson02DateOfAttendance', 'error')} ">
+        <label for="lesson02DateOfAttendance">
+            <g:message code="student.lesson02DateOfAttendance.label" default="Lesson02 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson02DateOfAttendance" precision="day"  value="${studentInstance?.lesson02DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson03DateOfAttendance', 'error')} ">
+        <label for="lesson03DateOfAttendance">
+            <g:message code="student.lesson03DateOfAttendance.label" default="Lesson03 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson03DateOfAttendance" precision="day"  value="${studentInstance?.lesson03DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson04DateOfAttendance', 'error')} ">
+        <label for="lesson04DateOfAttendance">
+            <g:message code="student.lesson04DateOfAttendance.label" default="Lesson04 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson04DateOfAttendance" precision="day"  value="${studentInstance?.lesson04DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson05DateOfAttendance', 'error')} ">
+        <label for="lesson05DateOfAttendance">
+            <g:message code="student.lesson05DateOfAttendance.label" default="Lesson05 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson05DateOfAttendance" precision="day"  value="${studentInstance?.lesson05DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson06DateOfAttendance', 'error')} ">
+        <label for="lesson06DateOfAttendance">
+            <g:message code="student.lesson06DateOfAttendance.label" default="Lesson06 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson06DateOfAttendance" precision="day"  value="${studentInstance?.lesson06DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson07DateOfAttendance', 'error')} ">
+        <label for="lesson07DateOfAttendance">
+            <g:message code="student.lesson07DateOfAttendance.label" default="Lesson07 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson07DateOfAttendance" precision="day"  value="${studentInstance?.lesson07DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson08DateOfAttendance', 'error')} ">
+        <label for="lesson08DateOfAttendance">
+            <g:message code="student.lesson08DateOfAttendance.label" default="Lesson08 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson08DateOfAttendance" precision="day"  value="${studentInstance?.lesson08DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson09DateOfAttendance', 'error')} ">
+        <label for="lesson09DateOfAttendance">
+            <g:message code="student.lesson09DateOfAttendance.label" default="Lesson09 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson09DateOfAttendance" precision="day"  value="${studentInstance?.lesson09DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson10DateOfAttendance', 'error')} ">
+        <label for="lesson10DateOfAttendance">
+            <g:message code="student.lesson10DateOfAttendance.label" default="Lesson10 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson10DateOfAttendance" precision="day"  value="${studentInstance?.lesson10DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson11DateOfAttendance', 'error')} ">
+        <label for="lesson11DateOfAttendance">
+            <g:message code="student.lesson11DateOfAttendance.label" default="Lesson11 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson11DateOfAttendance" precision="day"  value="${studentInstance?.lesson11DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson12DateOfAttendance', 'error')} ">
+        <label for="lesson12DateOfAttendance">
+            <g:message code="student.lesson12DateOfAttendance.label" default="Lesson12 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson12DateOfAttendance" precision="day"  value="${studentInstance?.lesson12DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson13DateOfAttendance', 'error')} ">
+        <label for="lesson13DateOfAttendance">
+            <g:message code="student.lesson13DateOfAttendance.label" default="Lesson13 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson13DateOfAttendance" precision="day"  value="${studentInstance?.lesson13DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson14DateOfAttendance', 'error')} ">
+        <label for="lesson14DateOfAttendance">
+            <g:message code="student.lesson14DateOfAttendance.label" default="Lesson14 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson14DateOfAttendance" precision="day"  value="${studentInstance?.lesson14DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson15DateOfAttendance', 'error')} ">
+        <label for="lesson15DateOfAttendance">
+            <g:message code="student.lesson15DateOfAttendance.label" default="Lesson15 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson15DateOfAttendance" precision="day"  value="${studentInstance?.lesson15DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson16DateOfAttendance', 'error')} ">
+        <label for="lesson16DateOfAttendance">
+            <g:message code="student.lesson16DateOfAttendance.label" default="Lesson16 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson16DateOfAttendance" precision="day"  value="${studentInstance?.lesson16DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson17DateOfAttendance', 'error')} ">
+        <label for="lesson17DateOfAttendance">
+            <g:message code="student.lesson17DateOfAttendance.label" default="Lesson17 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson17DateOfAttendance" precision="day"  value="${studentInstance?.lesson17DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson18DateOfAttendance', 'error')} ">
+        <label for="lesson18DateOfAttendance">
+            <g:message code="student.lesson18DateOfAttendance.label" default="Lesson18 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson18DateOfAttendance" precision="day"  value="${studentInstance?.lesson18DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson19DateOfAttendance', 'error')} ">
+        <label for="lesson19DateOfAttendance">
+            <g:message code="student.lesson19DateOfAttendance.label" default="Lesson19 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson19DateOfAttendance" precision="day"  value="${studentInstance?.lesson19DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson20DateOfAttendance', 'error')} ">
+        <label for="lesson20DateOfAttendance">
+            <g:message code="student.lesson20DateOfAttendance.label" default="Lesson20 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson20DateOfAttendance" precision="day"  value="${studentInstance?.lesson20DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson21DateOfAttendance', 'error')} ">
+        <label for="lesson21DateOfAttendance">
+            <g:message code="student.lesson21DateOfAttendance.label" default="Lesson21 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson21DateOfAttendance" precision="day"  value="${studentInstance?.lesson21DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson22DateOfAttendance', 'error')} ">
+        <label for="lesson22DateOfAttendance">
+            <g:message code="student.lesson22DateOfAttendance.label" default="Lesson22 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson22DateOfAttendance" precision="day"  value="${studentInstance?.lesson22DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson23DateOfAttendance', 'error')} ">
+        <label for="lesson23DateOfAttendance">
+            <g:message code="student.lesson23DateOfAttendance.label" default="Lesson23 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson23DateOfAttendance" precision="day"  value="${studentInstance?.lesson23DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson24DateOfAttendance', 'error')} ">
+        <label for="lesson24DateOfAttendance">
+            <g:message code="student.lesson24DateOfAttendance.label" default="Lesson24 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson24DateOfAttendance" precision="day"  value="${studentInstance?.lesson24DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson25DateOfAttendance', 'error')} ">
+        <label for="lesson25DateOfAttendance">
+            <g:message code="student.lesson25DateOfAttendance.label" default="Lesson25 Date Of Attendance" />
+
+        </label>
+        <g:datePicker name="lesson25DateOfAttendance" precision="day"  value="${studentInstance?.lesson25DateOfAttendance}" default="none" noSelection="['': '']" />
+    </div>
+
+%{--<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson26DateOfAttendance', 'error')} ">--}%
+%{--<label for="lesson26DateOfAttendance">--}%
+%{--<g:message code="student.lesson26DateOfAttendance.label" default="Lesson26 Date Of Attendance" />--}%
+%{----}%
+%{--</label>--}%
+%{--<g:datePicker name="lesson26DateOfAttendance" precision="day"  value="${studentInstance?.lesson26DateOfAttendance}" default="none" noSelection="['': '']" />--}%
+%{--</div>--}%
+
+%{--<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson27DateOfAttendance', 'error')} ">--}%
+%{--<label for="lesson27DateOfAttendance">--}%
+%{--<g:message code="student.lesson27DateOfAttendance.label" default="Lesson27 Date Of Attendance" />--}%
+%{----}%
+%{--</label>--}%
+%{--<g:datePicker name="lesson27DateOfAttendance" precision="day"  value="${studentInstance?.lesson27DateOfAttendance}" default="none" noSelection="['': '']" />--}%
+%{--</div>--}%
+
+%{--<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'lesson28DateOfAttendance', 'error')} ">--}%
+%{--<label for="lesson28DateOfAttendance">--}%
+%{--<g:message code="student.lesson28DateOfAttendance.label" default="Lesson28 Date Of Attendance" />--}%
+%{----}%
+%{--</label>--}%
+%{--<g:datePicker name="lesson28DateOfAttendance" precision="day"  value="${studentInstance?.lesson28DateOfAttendance}" default="none" noSelection="['': '']" />--}%
+%{--</div>--}%
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'devotionalPrayerList', 'error')} ">
+        <label for="devotionalPrayerList">
+            <g:message code="student.devotionalPrayerList.label" default="Devotional Prayer List" />
+
+        </label>
+
+        <ul class="one-to-many">
+            <g:each in="${studentInstance?.devotionalPrayerList?}" var="d">
+                <li><g:link controller="devotionalPrayer" action="show" id="${d.id}">${d?.encodeAsHTML()}</g:link></li>
+            </g:each>
+            <li class="add">
+                <g:link controller="devotionalPrayer" action="create" params="['student.id': studentInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'devotionalPrayer.label', default: 'DevotionalPrayer')])}</g:link>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'worshipServiceAttendanceList', 'error')} ">
+        <label for="worshipServiceAttendanceList">
+            <g:message code="student.worshipServiceAttendanceList.label" default="Worship Service Attendance List" />
+
+        </label>
+
+        <ul class="one-to-many">
+            <g:each in="${studentInstance?.worshipServiceAttendanceList?}" var="w">
+                <li><g:link controller="worshipServiceAttendance" action="show" id="${w.id}">${w?.encodeAsHTML()}</g:link></li>
+            </g:each>
+            <li class="add">
+                <g:link controller="worshipServiceAttendance" action="create" params="['student.id': studentInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'worshipServiceAttendance.label', default: 'WorshipServiceAttendance')])}</g:link>
+            </li>
+        </ul>
+
+    </div>
+
+
+
+</g:if>

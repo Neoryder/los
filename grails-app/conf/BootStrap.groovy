@@ -2036,21 +2036,21 @@ class BootStrap {
         cal.set(Calendar.MINUTE,0)
         cal.set(Calendar.SECOND,0)
         cal.set(Calendar.MILLISECOND,0)
-        println '1'+ cal.getTime()
+//        println '1'+ cal.getTime()
         cal.set(Calendar.DAY_OF_YEAR,1)
-        println '2'+cal.getTime()
+//        println '2'+cal.getTime()
         cal.set(Calendar.WEEK_OF_YEAR,1)
-        println '3'+cal.getTime()
-        println '3a'+cal.get(Calendar.WEEK_OF_YEAR)
+//        println '3'+cal.getTime()
+//        println '3a'+cal.get(Calendar.WEEK_OF_YEAR)
         cal.set(Calendar.DAY_OF_WEEK,2)
-        println '4'+cal.getTime()
+//        println '4'+cal.getTime()
         dateTo = cal.getTime()
         cal.add(Calendar.DAY_OF_YEAR,6)
-        println '5'+cal.getTime()
+//        println '5'+cal.getTime()
         dateFrom = cal.getTime()
         week = 1
 
-//        WeekNumber.deleteAll(WeekNumber.findAll())
+
 
         Calendar calNewYear = Calendar.getInstance()
         calNewYear.set(Calendar.HOUR,0)
@@ -2060,7 +2060,7 @@ class BootStrap {
         calNewYear.set(Calendar.MONTH,Calendar.DECEMBER)
         calNewYear.set(Calendar.DAY_OF_MONTH,31)
 //        calNewYear.add(Calendar.YEAR,1)
-        println "calNewYear:"+calNewYear.getTime()
+//        println "calNewYear:"+calNewYear.getTime()
         WeekNumber weekNo = null
 if(!WeekNumber.findAllByYearAndWeek(year,week)){
 

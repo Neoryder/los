@@ -234,7 +234,7 @@
 				<li class="fieldcontain">
 					<span id="teacher-label" class="property-label"><g:message code="student.teacher.label" default="Teacher" /></span>
 					
-						<span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${studentInstance?.teacher?.id}">${studentInstance?.teacher?.assignedNumber?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${studentInstance?.teacher?.id}">${studentInstance?.teacher?.assignedNumber?.encodeAsHTML()}-${studentInstance?.teacher?.name?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

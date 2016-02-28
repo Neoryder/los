@@ -13,7 +13,7 @@
         //Auto Complete
         var autoCompleteStudentUrl = '${g.createLink(controller:'autoComplete', action:'autoCompleteStudent')}';
         var autoCompleteTeacherUrl = '${g.createLink(controller:'autoComplete', action:'autoCompleteTeacher')}';
-        var autoCompleteR303Url = '${g.createLink(controller:'autoComplete', action:'autoCompleteR303')}';
+        var autoCompleteR305Url = '${g.createLink(controller:'autoComplete', action:'autoCompleteR305')}';
 
         function formatResultR305(results) {
             console.log('formatResultR305');
@@ -120,7 +120,7 @@
 
             $("#r305").select2({
                 ajax: {
-                    url: autoCompleteR303Url,
+                    url: autoCompleteR305Url,
                     dataType: 'json',
                     delay: 250,
                     data: function (params) {

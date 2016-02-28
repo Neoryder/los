@@ -14,9 +14,9 @@ class Student {
         birthCertificateRegistrationNumber nullable: true, blank: true
         marriageContractCertificateRegistrationNumber nullable: true, blank: true
         cenomarNumber nullable: true, blank: true
-        birthDate nullable: false
+        birthDate nullable: false, unique: ['firstName','middleName','lastName','husbandsLastName']
         startDate nullable: true
-        gender inList: ['lalake','babae']
+        gender nullable: false, inList: ['lalake','babae']
         studentType inList: ['Handog-nakatala','Handog-di nakatala','Hindi Handog']
         address nullable: false, blank: false, maxSize: 500
         civilStatus nullable: false, blank: false, inList: ['binata-dalaga','balo','divorced-annulled','may-asawa','may-asawa-hiwalay','may-kinakasama']
