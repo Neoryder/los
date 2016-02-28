@@ -69,6 +69,7 @@ grails.project.dependency.resolution = {
         runtime ":database-migration:1.3.8"
         compile ":scaffolding:2.0.2"
         compile ':cache:1.1.1'
+        compile "org.grails.plugins:jasper:1.11.0"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"

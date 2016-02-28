@@ -1,9 +1,14 @@
 package los
 
+import org.codehaus.groovy.grails.plugins.jasper.JasperExportFormat
+import org.codehaus.groovy.grails.plugins.jasper.JasperReportDef
+
 import java.text.SimpleDateFormat
 
 class ReportsController {
 
+
+    def jasperService
     def screeningService
 
     def index() {
@@ -23,6 +28,46 @@ class ReportsController {
         } else {
             render screeningService.finalScreening()
         }
+    }
+
+    def reports(){
+        []
+    }
+
+    def reportsStudentByTeacher(){
+
+
+
+        def studentList = Student.findAllByStatus('active')
+        def data = []
+        studentList.each {
+            data << [
+                    'lokal':it?.lokal?.lokal,
+                    'nagdoktrina':it?.teacher?.name,
+                    'akay':it?.lastName + (it?.husbandsLastName?" - "+it?.husbandsLastName:"") +", " + it?.firstName + " " + it?.middleName ,
+                    'nagakay':it?.nagakay
+            ]
+        }
+
+        def jrxmlName = "studentByTeacher"
+        def reportParam = [:]
+//        reportParam['BIR_LOGO'] = servletContext.getRealPath('/reports/images/bir_logo.png')
+
+        def reportDef = new JasperReportDef(
+                folder:'reports/',
+                name:jrxmlName,
+                fileFormat: JasperExportFormat.PDF_FORMAT,
+//                reportData: display
+                reportData: data
+        )
+        reportDef.parameters = reportParam
+
+        println reportDef.parameters
+
+        reportDef.contentStream = jasperService.generateReport(reportDef)
+        response.contentType = reportDef.fileFormat.mimeTyp
+        response.characterEncoding = 'UTF-8'
+        response.outputStream << reportDef.contentStream.toByteArray()
 
     }
 }
