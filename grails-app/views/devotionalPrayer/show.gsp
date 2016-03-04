@@ -35,24 +35,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${devotionalPrayerInstance?.type}">
-				<li class="fieldcontain">
-					<span id="type-label" class="property-label"><g:message code="devotionalPrayer.type.label" default="Type" /></span>
-					
-						<span class="property-value" aria-labelledby="type-label"><g:fieldValue bean="${devotionalPrayerInstance}" field="type"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${devotionalPrayerInstance?.status}">
-				<li class="fieldcontain">
-					<span id="status-label" class="property-label"><g:message code="devotionalPrayer.status.label" default="Status" /></span>
-					
-						<span class="property-value" aria-labelledby="status-label"><g:fieldValue bean="${devotionalPrayerInstance}" field="status"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${devotionalPrayerInstance?.student}">
 				<li class="fieldcontain">
 					<span id="student-label" class="property-label"><g:message code="devotionalPrayer.student.label" default="Student" /></span>

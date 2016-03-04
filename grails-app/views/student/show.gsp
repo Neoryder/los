@@ -513,7 +513,7 @@
 				<g:if test="${studentInstance?.devotionalPrayerList}">
 				<li class="fieldcontain">
 					<span id="devotionalPrayerList-label" class="property-label"><g:message code="student.devotionalPrayerList.label" default="Devotional Prayer List" /></span>
-					
+						[Total: ${studentInstance?.devotionalPrayerList?.size()}] - 
 						<g:each in="${studentInstance.devotionalPrayerList}" var="d">
 						<span class="property-value" aria-labelledby="devotionalPrayerList-label"><g:link controller="devotionalPrayer" action="show" id="${d.id}">${d?.encodeAsHTML()}</g:link></span>
 						</g:each>
@@ -524,7 +524,7 @@
 				<g:if test="${studentInstance?.worshipServiceAttendanceList}">
 				<li class="fieldcontain">
 					<span id="worshipServiceAttendanceList-label" class="property-label"><g:message code="student.worshipServiceAttendanceList.label" default="Worship Service Attendance List" /></span>
-					
+						[Total: ${studentInstance?.worshipServiceAttendanceList?.size()}] - 
 						<g:each in="${studentInstance.worshipServiceAttendanceList}" var="w">
 						<span class="property-value" aria-labelledby="worshipServiceAttendanceList-label"><g:link controller="worshipServiceAttendance" action="show" id="${w.id}">${w?.encodeAsHTML()}</g:link></span>
 						</g:each>

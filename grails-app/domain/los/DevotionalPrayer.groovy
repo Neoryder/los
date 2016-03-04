@@ -1,5 +1,7 @@
 package los
 
+import java.text.SimpleDateFormat
+
 class DevotionalPrayer {
 
     static constraints = {
@@ -16,4 +18,7 @@ class DevotionalPrayer {
 
     static belongsTo = [student:Student]
 
+	String toString(){
+		return "[" + new SimpleDateFormat("MM/dd/yyyy").format(dateOfAttendance) + "]"
+	}
 }

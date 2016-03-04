@@ -39,6 +39,8 @@
 
                         <g:sortableColumn property="referenceNumber01" title="${message(code: 'student.referenceNumber01.label', default: 'Reference Number')}" />
 
+                        <th><g:message code="student.worshipServiceAttendanceList.label" default="Total Pagsamba" /></th>
+
                         <g:sortableColumn property="firstName" title="${message(code: 'student.firstName.label', default: 'First Name')}" />
 
                         <g:sortableColumn property="middleName" title="${message(code: 'student.middleName.label', default: 'Middle Name')}" />
@@ -61,8 +63,10 @@
 
                             <td><g:link action="show" id="${studentInstance.id}">${fieldValue(bean: studentInstance, field: "referenceNumber01")}</g:link></td>
 
-                            <td><g:link action="show" id="${studentInstance.id}">${fieldValue(bean: studentInstance, field: "firstName")}</g:link></td>
+                            <td>${studentInstance.worshipServiceAttendanceList.size()}</td>
 
+                            <td><g:link action="show" id="${studentInstance.id}">${fieldValue(bean: studentInstance, field: "firstName")}</g:link></td>
+                            
                             <td>${fieldValue(bean: studentInstance, field: "middleName")}</td>
 
                             <td>${fieldValue(bean: studentInstance, field: "lastName")}</td>

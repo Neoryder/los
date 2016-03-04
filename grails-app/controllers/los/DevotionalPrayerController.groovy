@@ -21,7 +21,7 @@ class DevotionalPrayerController {
 
     def save() {
         def devotionalPrayerInstance = new DevotionalPrayer(params)
-        devotionalPrayerInstance.status = 'active'
+        //devotionalPrayerInstance.status = 'active'
         if (!devotionalPrayerInstance.save(flush: true)) {
             render(view: "create", model: [devotionalPrayerInstance: devotionalPrayerInstance])
             return

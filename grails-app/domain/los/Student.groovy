@@ -158,12 +158,6 @@ class Student {
     String type = 'doktrina'
     String status = 'active'
 
-
-    static transients = ['buongPangalan']
-    String getBuongPangalan(){
-        return lastName + (husbandsLastName?" - "+husbandsLastName:"") +", " + firstName + " " + middleName
-    }
-
     String toString(){
         return referenceNumber01+"|"+lastName + (husbandsLastName?" - " + husbandsLastName:"") + ", "  + firstName +' '+ middleName
     }
