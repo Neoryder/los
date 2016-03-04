@@ -616,3 +616,25 @@ textarea,
 .uneditable-input {
     width: 100%;
 }
+
+
+/* test */
+select[id$=day] {
+	width:10%;
+}
+
+select[id$=month] {
+	width:20%;
+}
+
+select[id$=year] {
+	width:15%;
+}
+select[id=civilStatus], select[id=studentType], select[id=gender] {
+	width:100%;
+}
+
+div.fieldcontain {
+	margin-left:20px;
+}
+/* end test */
