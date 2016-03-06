@@ -22,8 +22,10 @@ class WorshipServiceAttendance {
 
     static belongsTo = [student:Student]
 
+	def messageSource
+	
 	String toString(){
-		return "[" + new SimpleDateFormat("MM/dd/yyyy").format(dateOfAttendance) + "|" + lokal + "]"
+		return "(" + new SimpleDateFormat(messageSource.getMessage(Constants.DATEFORMATI18N, null, null)).format(dateOfAttendance) + "[" + lokal + "])"
 	}
 
 }
