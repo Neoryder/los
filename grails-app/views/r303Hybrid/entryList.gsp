@@ -174,7 +174,7 @@
                     <td><g:link action="show"
                                 id="${r303EntryInstance.id}">${fieldValue(bean: r303EntryInstance, field: "lessonFri")}</g:link></td>
 
-                    <td>${fieldValue(bean: r303EntryInstance, field: "student.buongPangalan")}</td>
+                    <td>${fieldValue(bean: r303EntryInstance, field: "student")}</td>
 
                     <td>${fieldValue(bean: r303EntryInstance, field: "lessonMon")}</td>
 

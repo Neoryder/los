@@ -54,7 +54,7 @@
 
                             <td>${fieldValue(bean: devotionalPrayerInstance, field: "student.lokal.lokal")}</td>
 
-                            <td>${fieldValue(bean: devotionalPrayerInstance, field: "student.buongPangalan")}</td>
+                            <td>${fieldValue(bean: devotionalPrayerInstance, field: "student")}</td>
 
                         </tr>
                     </g:each>
