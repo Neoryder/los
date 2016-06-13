@@ -39,6 +39,15 @@ class StudentController {
         println params
         //todo Transform birthDate to saveable date
         def studentInstance = new Student(params)
+
+        def studentList = Student.findAllByFirstNameAndMiddleNameAndLastName(
+                studentInstance.firstName,studentInstance.middleName,studentInstance.lastName
+        )
+        if (studentList!=null && !studentList.isEmpty()) {
+            render(view: "create", model: [studentInstance: studentInstance])
+            return
+        }
+
         if (!studentInstance.save(flush: true)) {
             render(view: "create", model: [studentInstance: studentInstance])
             return
