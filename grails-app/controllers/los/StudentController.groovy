@@ -1,20 +1,33 @@
 package los
-
 import org.springframework.dao.DataIntegrityViolationException
-
-import java.text.SimpleDateFormat
 
 class StudentController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
-        redirect(action: "list", params: params)
+        redirect(action: "lokalList", params: params)
+    }
+
+    def lokalList(){
+        params.max = 100
+        println params
+        [lokalInstanceList:Lokal.list(params),lokalInstanceTotal:Lokal.count()]
     }
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [studentInstanceList: Student.list(params), studentInstanceTotal: Student.count()]
+    }
+
+//    def listByLokal(Integer max, Integer lokalId) {
+    def listByLokal() {
+        println params
+        println "lokalId:"+params.id
+        def lokal = Lokal.get(params.id)
+//        params.max = Math.min(max ?: 10, 100)
+        def studentList = Student.findAllByLokal(lokal)
+        [studentInstanceList: studentList, studentInstanceTotal: studentList.size()]
     }
 
     def create() {
