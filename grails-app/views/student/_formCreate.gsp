@@ -94,38 +94,15 @@
             <g:select id="lokal" name="lokal.id" noSelection="${['null':'Select One...']}" from="${los.Lokal.list()}" optionKey="id" optionValue="lokal" required="" value="${studentInstance?.lokal?.id}"  class="many-to-one"/>
         </div>
     </div>
-    <div class="span6">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'birthCertificateRegistrationNumber', 'error')} ">
-            <label for="birthCertificateRegistrationNumber">
-                <g:message code="student.birthCertificateRegistrationNumber.label" default="Birth Certificate Registration Number" />
+    %{--<div class="span6">--}%
+        %{--<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'birthCertificateRegistrationNumber', 'error')} ">--}%
+            %{--<label for="birthCertificateRegistrationNumber">--}%
+                %{--<g:message code="student.birthCertificateRegistrationNumber.label" default="Birth Certificate Registration Number" />--}%
 
-            </label>
-            <g:textField name="birthCertificateRegistrationNumber" value="${studentInstance?.birthCertificateRegistrationNumber}"/>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="span6">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'marriageContractCertificateRegistrationNumber', 'error')} ">
-            <label for="marriageContractCertificateRegistrationNumber">
-                <g:message code="student.marriageContractCertificateRegistrationNumber.label"
-                           default="Marriage Contract Certificate Registration Number"/>
-
-            </label>
-            <g:textField name="marriageContractCertificateRegistrationNumber"
-                         value="${studentInstance?.marriageContractCertificateRegistrationNumber}"/>
-        </div>
-    </div>
-    <div class="span6">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'cenomarNumber', 'error')} ">
-            <label for="cenomarNumber">
-                <g:message code="student.cenomarNumber.label" default="Cenomar Number" />
-
-            </label>
-            <g:textField name="cenomarNumber" value="${studentInstance?.cenomarNumber}"/>
-        </div>
-    </div>
+            %{--</label>--}%
+            %{--<g:textField name="birthCertificateRegistrationNumber" value="${studentInstance?.birthCertificateRegistrationNumber}"/>--}%
+        %{--</div>--}%
+    %{--</div>--}%
 </div>
 
 <div class="row">
@@ -152,73 +129,89 @@
 </div>
 
 
-
 <div class="row">
-    <div class="span6">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'citizenship', 'error')} required">
-            <label for="citizenship">
-                <g:message code="student.citizenship.label" default="Citizenship" />
-                <span class="required-indicator">*</span>
+    <div class="span12">
+        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'address', 'error')}">
+            <label for="address">
+                <g:message code="student.address.label" default="Address" />
             </label>
-            <g:textField name="citizenship" maxlength="100" required="" value="${studentInstance?.citizenship}"/>
-        </div>
-    </div>
-    <div class="span6">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'nationality', 'error')} required">
-            <label for="nationality">
-                <g:message code="student.nationality.label" default="Nationality" />
-                <span class="required-indicator">*</span>
-            </label>
-            <g:textField name="nationality" maxlength="100" required="" value="${studentInstance?.nationality}"/>
+            <g:textArea class="long1000" name="address" cols="40" rows="5" maxlength="500" value="${studentInstance?.address}"/>
         </div>
     </div>
 </div>
 
 <div class="row">
     <div class="span6">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'nagakay', 'error')} required">
+        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'nagakay', 'error')} ">
             <label for="nagakay">
                 <g:message code="student.nagakay.label" default="Nagakay" />
-                <span class="required-indicator">*</span>
             </label>
-            <g:textField name="nagakay" maxlength="200" required="" value="${studentInstance?.nagakay}"/>
+            <g:textField name="nagakay" maxlength="200"  value="${studentInstance?.nagakay}"/>
         </div>
     </div>
     <div class="span6">
         <div class="row">
             <div class="span3">
-                <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'nagakayAreaGroup', 'error')} required">
+                <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'nagakayAreaGroup', 'error')} ">
                     <label for="nagakayAreaGroup">
                         <g:message code="student.nagakayAreaGroup.label" default="Nagakay Area Group" />
-                        <span class="required-indicator">*</span>
                     </label>
-                    <g:textField class="short200" name="nagakayAreaGroup" maxlength="50" required="" value="${studentInstance?.nagakayAreaGroup}"/>
+                    <g:textField class="short200" name="nagakayAreaGroup" maxlength="50"  value="${studentInstance?.nagakayAreaGroup}"/>
                 </div>
             </div>
             <div class="span3">
-                <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'nagakayFamilyOrganization', 'error')} required">
+                <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'nagakayFamilyOrganization', 'error')} ">
                     <label for="nagakayFamilyOrganization">
                         <g:message code="student.nagakayFamilyOrganization.label" default="Nagakay Family Organization" />
-                        <span class="required-indicator">*</span>
                     </label>
-                    <g:select name="nagakayFamilyOrganization" noSelection="${['null':'Select One...']}" from="${studentInstance.constraints.nagakayFamilyOrganization.inList}" required="" value="${studentInstance?.nagakayFamilyOrganization}" valueMessagePrefix="student.nagakayFamilyOrganization"/>
+                    <g:select name="nagakayFamilyOrganization" noSelection="${['':'Select One...']}" from="${studentInstance.constraints.nagakayFamilyOrganization.inList}"  value="${studentInstance?.nagakayFamilyOrganization}" valueMessagePrefix="student.nagakayFamilyOrganization"/>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="span12">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'address', 'error')} required">
-            <label for="address">
-                <g:message code="student.address.label" default="Address" />
-                <span class="required-indicator">*</span>
-            </label>
-            <g:textArea class="long1000" name="address" cols="40" rows="5" maxlength="500" required="" value="${studentInstance?.address}"/>
-        </div>
-    </div>
-</div>
+%{--<div class="row">--}%
+    %{--<div class="span6">--}%
+        %{--<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'citizenship', 'error')}">--}%
+            %{--<label for="citizenship">--}%
+                %{--<g:message code="student.citizenship.label" default="Citizenship" />--}%
+            %{--</label>--}%
+            %{--<g:textField name="citizenship" maxlength="100"  value="${studentInstance?.citizenship}"/>--}%
+        %{--</div>--}%
+    %{--</div>--}%
+    %{--<div class="span6">--}%
+        %{--<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'nationality', 'error')}">--}%
+            %{--<label for="nationality">--}%
+                %{--<g:message code="student.nationality.label" default="Nationality" />--}%
+            %{--</label>--}%
+            %{--<g:textField name="nationality" maxlength="100"  value="${studentInstance?.nationality}"/>--}%
+        %{--</div>--}%
+    %{--</div>--}%
+%{--</div>--}%
+
+%{--<div class="row">--}%
+    %{--<div class="span6">--}%
+        %{--<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'marriageContractCertificateRegistrationNumber', 'error')} ">--}%
+            %{--<label for="marriageContractCertificateRegistrationNumber">--}%
+                %{--<g:message code="student.marriageContractCertificateRegistrationNumber.label"--}%
+                           %{--default="Marriage Contract Certificate Registration Number"/>--}%
+
+            %{--</label>--}%
+            %{--<g:textField name="marriageContractCertificateRegistrationNumber"--}%
+                         %{--value="${studentInstance?.marriageContractCertificateRegistrationNumber}"/>--}%
+        %{--</div>--}%
+    %{--</div>--}%
+    %{--<div class="span6">--}%
+        %{--<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'cenomarNumber', 'error')} ">--}%
+            %{--<label for="cenomarNumber">--}%
+                %{--<g:message code="student.cenomarNumber.label" default="Cenomar Number" />--}%
+
+            %{--</label>--}%
+            %{--<g:textField name="cenomarNumber" value="${studentInstance?.cenomarNumber}"/>--}%
+        %{--</div>--}%
+    %{--</div>--}%
+%{--</div>--}%
 
 
 <div class="row">
@@ -240,7 +233,6 @@
                 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'type', 'error')} ">
                     <label for="type">
                         <g:message code="student.type.label" default="Type" />
-
                     </label>
                     <g:select name="type" noSelection="${['null':'Select One...']}" from="${studentInstance.constraints.type.inList}" value="${studentInstance?.type}" valueMessagePrefix="student.type" noSelection="['': '']"/>
                 </div>
@@ -269,24 +261,24 @@
             <g:textField class="short300"  name="referenceNumber01" required="" value="${studentInstance?.referenceNumber01}"/>
         </div>
     </div>
-    <div class="span4">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'referenceNumber02', 'error')} ">
-            <label for="referenceNumber02">
-                <g:message code="student.referenceNumber02.label" default="Reference Number02" />
+    %{--<div class="span4">--}%
+        %{--<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'referenceNumber02', 'error')} ">--}%
+            %{--<label for="referenceNumber02">--}%
+                %{--<g:message code="student.referenceNumber02.label" default="Reference Number02" />--}%
 
-            </label>
-            <g:textField class="short300" name="referenceNumber02" value="${studentInstance?.referenceNumber02}"/>
-        </div>
-    </div>
-    <div class="span4">
-        <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'referenceNumber03', 'error')} ">
-            <label for="referenceNumber03">
-                <g:message code="student.referenceNumber03.label" default="Reference Number03" />
+            %{--</label>--}%
+            %{--<g:textField class="short300" name="referenceNumber02" value="${studentInstance?.referenceNumber02}"/>--}%
+        %{--</div>--}%
+    %{--</div>--}%
+    %{--<div class="span4">--}%
+        %{--<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'referenceNumber03', 'error')} ">--}%
+            %{--<label for="referenceNumber03">--}%
+                %{--<g:message code="student.referenceNumber03.label" default="Reference Number03" />--}%
 
-            </label>
-            <g:textField class="short300" name="referenceNumber03" value="${studentInstance?.referenceNumber03}"/>
-        </div>
-    </div>
+            %{--</label>--}%
+            %{--<g:textField class="short300" name="referenceNumber03" value="${studentInstance?.referenceNumber03}"/>--}%
+        %{--</div>--}%
+    %{--</div>--}%
 </div>
 
 

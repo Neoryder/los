@@ -205,6 +205,16 @@
 					
 				</li>
 				</g:if>
+
+
+                <g:if test="${studentInstance?.referenceNumber}">
+                    <li class="fieldcontain">
+                        <span id="referenceNumber-label" class="property-label"><g:message code="student.referenceNumber.label" default="Reference Number" /></span>
+
+                        <span class="property-value" aria-labelledby="referenceNumber-label"><g:fieldValue bean="${studentInstance}" field="referenceNumber"/></span>
+
+                    </li>
+                </g:if>
 			
 				<g:if test="${studentInstance?.referenceNumber01}">
 				<li class="fieldcontain">

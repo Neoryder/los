@@ -17,18 +17,19 @@ class Student {
         birthDate nullable: false, unique: ['firstName','middleName','lastName','husbandsLastName']
         startDate nullable: true
         gender nullable: false, inList: ['lalake','babae']
-        studentType inList: ['Handog-nakatala','Handog-di nakatala','Hindi Handog']
+        studentType nullable: true, blank: true, inList: ['Handog-nakatala','Handog-di nakatala','Hindi Handog','']
         address nullable: false, blank: false, maxSize: 500
         civilStatus nullable: false, blank: false, inList: ['binata-dalaga','balo','divorced-annulled','may-asawa','may-asawa-hiwalay','may-kinakasama']
-        nationality nullable: false, blank: false, maxSize: 100
-        citizenship nullable: false, blank: false, maxSize: 100
-        nagakay nullable: false, blank: false, maxSize: 200
-        nagakayAreaGroup nullable: false, blank: false, maxSize: 50
-        nagakayFamilyOrganization nullable: false, blank: false, inList: ['buklod','kadiwa','binhi','pnk']
+        nationality nullable: true, blank: true, maxSize: 100
+        citizenship nullable: true, blank: true, maxSize: 100
+        nagakay nullable: true, blank: true, maxSize: 200
+        nagakayAreaGroup nullable: true, blank: true, maxSize: 50
+        nagakayFamilyOrganization nullable: true, blank: true, inList: ['buklod','kadiwa','binhi','pnk','']
         referenceNumber01 nullable: false, blank: false, unique: ['firstName','middleName','lastName','husbandsLastName']
         referenceNumber02 nullable: true, blank: true
         referenceNumber03 nullable: true, blank: true
         teacher nullable: false, blank: false
+        referenceNumber nullable: false, blank: false
 
 
         lesson01DateOfAttendance nullable: true
@@ -119,7 +120,6 @@ class Student {
     Teacher teacher
 
 
-
     Date lesson01DateOfAttendance
     Date lesson02DateOfAttendance
     Date lesson03DateOfAttendance
@@ -157,9 +157,11 @@ class Student {
 
     String type = 'doktrina'
     String status = 'active'
+    String referenceNumber
 
     String toString(){
         return referenceNumber01+"|"+lastName + (husbandsLastName?" - " + husbandsLastName:"") + ", "  + firstName +' '+ middleName
     }
+
 
 }

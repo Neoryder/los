@@ -47,6 +47,17 @@ class StudentController {
             render(view: "create", model: [studentInstance: studentInstance])
             return
         }
+        if(studentInstance.nagakayFamilyOrganization==null){
+            println "angol01"
+            studentInstance.nagakayFamilyOrganization = '';
+        }
+
+        studentInstance.referenceNumber = studentInstance.teacher.assignedNumber+"-"+studentInstance.referenceNumber01
+
+        if(studentInstance.studentType==null){
+        println "angol02"
+            studentInstance.studentType = '';
+        }
 
         if (!studentInstance.save(flush: true)) {
             render(view: "create", model: [studentInstance: studentInstance])
